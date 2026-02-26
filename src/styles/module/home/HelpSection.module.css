@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Help Section - Mobile-First Responsive
+   HairByTimaBlaq
+   ========================================================================== */
+
+.help {
+  padding: var(--space-10) 0;
+  background: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .help {
+    padding: var(--space-12) 0;
+  }
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+}
+
+.helpWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.helpHeader {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .helpHeader {
+    margin-bottom: var(--space-8);
+  }
+}
+
+.helpTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .helpTitle {
+    font-size: var(--text-2xl);
+  }
+}
+
+.helpSubtitle {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .helpSubtitle {
+    font-size: var(--text-base);
+  }
+}
+
+.helpGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .helpGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .helpGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+.helpCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+@media (min-width: 640px) {
+  .helpCard {
+    gap: var(--space-4);
+    padding: var(--space-5);
+    border-radius: var(--radius-xl);
+  }
+}
+
+.helpCard:hover {
+  border-color: var(--accent-primary);
+  background: var(--bg-tertiary);
+  transform: translateY(-2px);
+}
+
+.helpCard:hover .helpCardArrow {
+  transform: translateX(4px);
+  color: var(--accent-primary);
+}
+
+.helpCardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .helpCardIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+  }
+}
+
+.helpCardContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.helpCardTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin: 0 0 2px 0;
+}
+
+@media (min-width: 640px) {
+  .helpCardTitle {
+    font-size: var(--text-base);
+    margin: 0 0 var(--space-1) 0;
+  }
+}
+
+.helpCardText {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .helpCardText {
+    font-size: var(--text-sm);
+  }
+}
+
+.helpCardArrow {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+

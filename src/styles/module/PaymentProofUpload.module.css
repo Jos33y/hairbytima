@@ -1,0 +1,309 @@
+/* ==========================================================================
+   PaymentProofUpload Styles - Upload form with drag & drop
+   ========================================================================== */
+
+.container {
+  padding: var(--space-1);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.headerIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: var(--radius-lg);
+  color: var(--rose);
+  flex-shrink: 0;
+}
+
+.header h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-1);
+}
+
+.header p {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+/* Upload Area */
+.uploadArea {
+  position: relative;
+  min-height: 180px;
+  border: 2px dashed var(--border-secondary);
+  border-radius: var(--radius-xl);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+.uploadArea:hover {
+  border-color: var(--rose);
+  background: rgba(236, 72, 153, 0.03);
+}
+
+.uploadArea.dragActive {
+  border-color: var(--rose);
+  background: rgba(236, 72, 153, 0.08);
+  transform: scale(1.01);
+}
+
+.uploadArea.hasFile {
+  border-style: solid;
+  cursor: default;
+}
+
+.fileInput {
+  display: none;
+}
+
+/* Upload Prompt */
+.uploadPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  height: 180px;
+}
+
+.uploadIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: 50%;
+  color: var(--rose);
+  margin-bottom: var(--space-3);
+}
+
+.uploadText {
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-1);
+}
+
+.uploadSubtext {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  margin: 0 0 var(--space-2);
+}
+
+.uploadSubtext span {
+  color: var(--rose);
+  text-decoration: underline;
+}
+
+.uploadFormats {
+  font-size: var(--text-xs);
+  color: var(--text-quaternary);
+  margin: 0;
+}
+
+/* File Preview */
+.filePreview {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.filePreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pdfPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  gap: var(--space-2);
+}
+
+.pdfPreview span {
+  font-size: var(--text-sm);
+}
+
+.fileInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-3);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.fileName {
+  font-size: var(--text-xs);
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fileSize {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.removeFile {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.removeFile:hover {
+  background: rgba(239, 68, 68, 0.9);
+}
+
+/* Error */
+.uploadError {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+/* Submit Button */
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background: linear-gradient(135deg, var(--rose) 0%, #be185d 100%);
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.submitBtn:active:not(.disabled) {
+  transform: scale(0.98);
+}
+
+.submitBtn.disabled {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.3) 0%, rgba(190, 24, 93, 0.3) 100%);
+  color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: not-allowed;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Helper Text */
+.helperText {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+/* Support Section */
+.support {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-primary);
+  text-align: center;
+}
+
+.support > p {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  margin: 0 0 var(--space-2);
+}
+
+.supportLinks {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.supportLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--rose);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.supportLinks a:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (min-width: 640px) {
+  .uploadArea {
+    min-height: 220px;
+  }
+
+  .uploadPrompt {
+    height: 220px;
+  }
+
+  .filePreview {
+    height: 240px;
+  }
+
+  .submitBtn:hover:not(.disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3);
+  }
+}

@@ -1,0 +1,7 @@
+/* ==========================================================================
+   Admin Products Page Styles
+   Imports base and section styles
+   ========================================================================== */
+
+@import './admin_products/AdminProductsBase.module.css';
+@import './admin_products/AdminProductsSection.module.css'; 

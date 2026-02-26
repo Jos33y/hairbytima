@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Image Upload Component Styles
+   ========================================================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+}
+
+/* Preview Grid */
+.previewGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+@media (max-width: 480px) {
+  .previewGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.previewItem {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-default);
+  transition: border-color var(--transition-fast);
+}
+
+.previewItem:hover {
+  border-color: var(--accent-primary);
+}
+
+.previewItem.primary {
+  border-color: var(--accent-primary);
+}
+
+.previewItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.primaryBadge {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: 2px var(--space-2);
+  font-size: 10px;
+  font-weight: var(--weight-medium);
+  color: white;
+  background: var(--accent-primary);
+  border-radius: var(--radius-sm);
+}
+
+.previewActions {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: flex;
+  gap: var(--space-1);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.previewItem:hover .previewActions {
+  opacity: 1;
+}
+
+.setPrimaryBtn,
+.removeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.setPrimaryBtn {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
+}
+
+.setPrimaryBtn:hover {
+  background: white;
+  color: var(--accent-primary);
+}
+
+.removeBtn {
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+}
+
+.removeBtn:hover {
+  background: #ef4444;
+}
+
+/* Dropzone */
+.dropzone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  padding: var(--space-6);
+  background: var(--bg-secondary);
+  border: 2px dashed var(--border-default);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.dropzone:hover {
+  border-color: var(--accent-primary);
+  background: rgba(236, 72, 153, 0.05);
+}
+
+.dropzone.dragging {
+  border-color: var(--accent-primary);
+  background: rgba(236, 72, 153, 0.1);
+}
+
+.dropzone.uploading {
+  cursor: default;
+  pointer-events: none;
+}
+
+.fileInput {
+  display: none;
+}
+
+.dropzoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  color: var(--accent-primary);
+  background: var(--accent-primary-light);
+  border-radius: var(--radius-xl);
+}
+
+.dropzoneText {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+.dropzoneSubtext {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+}
+
+/* Uploading State */
+.uploadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 200px;
+}
+
+.spinner {
+  color: var(--accent-primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.uploadingText {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.progressBar {
+  width: 100%;
+  height: 4px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+/* Help Text */
+.helpText {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Error */
+.error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  font-size: var(--text-sm);
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: var(--radius-lg);
+}
+
+.error svg {
+  flex-shrink: 0;
+}

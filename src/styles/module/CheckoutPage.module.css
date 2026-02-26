@@ -1,0 +1,30 @@
+/* ==========================================================================
+   CheckoutPage - Premium Luxury Checkout Experience
+   ========================================================================== */
+
+@import './checkout/CheckoutPageBase.module.css';
+@import './checkout/CheckoutPageSections.module.css';
+
+/* ==========================================================================
+   Contact Notice - Order notification reminder
+   ========================================================================== */
+
+.contactNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  margin: var(--space-3) 0;
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: var(--gold);
+  line-height: 1.5;
+}
+
+.contactNotice svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.8;
+} 

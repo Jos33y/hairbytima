@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Wishlist Loader Styles - Mobile-First Responsive
+   HairByTimaBlaq - Matches WishlistPage responsive behavior
+   ========================================================================== */
+
+.loader {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* ==========================================================================
+   Animated Icon - Mobile First
+   ========================================================================== */
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: var(--accent-primary);
+  fill: rgba(236, 72, 153, 0.2);
+  /* Fluid icon size: 40px @ 360px → 48px @ 768px */
+  width: clamp(40px, 1.96vw + 32.94px, 48px);
+  height: clamp(40px, 1.96vw + 32.94px, 48px);
+}
+
+.pulse {
+  position: absolute;
+  /* Fluid pulse size: 40px @ 360px → 48px @ 768px */
+  width: clamp(40px, 1.96vw + 32.94px, 48px);
+  height: clamp(40px, 1.96vw + 32.94px, 48px);
+  border-radius: 50%;
+  background: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Loading Text
+   ========================================================================== */
+
+.text {
+  /* Fluid: 12px @ 360px → 14px @ 768px */
+  font-size: clamp(0.75rem, 0.49vw + 0.64rem, 0.875rem);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ==========================================================================
+   Skeleton Grid - Mobile First (Single Column Horizontal Cards)
+   ========================================================================== */
+
+.skeletonGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.skeletonCard {
+  display: grid;
+  /* Match WishlistPage card: fluid image width */
+  grid-template-columns: clamp(100px, 33.33vw, 140px) 1fr;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.skeletonImage {
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 0%,
+    var(--bg-elevated) 50%,
+    var(--bg-tertiary) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonContent {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+.skeletonTitle {
+  height: 16px;
+  width: 85%;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonPrice {
+  height: 20px;
+  width: 50%;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonButton {
+  height: 44px;
+  width: 100%;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  animation: shimmer 1.5s infinite;
+  margin-top: auto;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement (Mobile First)
+   ========================================================================== */
+
+/* 480px+ - Slightly larger skeleton cards */
+@media (min-width: 480px) {
+  .skeletonCard {
+    grid-template-columns: 140px 1fr;
+  }
+
+  .skeletonContent {
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .skeletonTitle {
+    height: 18px;
+  }
+
+  .skeletonPrice {
+    height: 22px;
+  }
+}
+
+/* 640px+ - 2 column grid with vertical cards */
+@media (min-width: 640px) {
+  .loader {
+    padding: var(--space-8);
+  }
+
+  .content {
+    gap: var(--space-8);
+  }
+
+  .skeletonGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  /* Switch to vertical card layout */
+  .skeletonCard {
+    display: block;
+    grid-template-columns: none;
+  }
+
+  .skeletonImage {
+    aspect-ratio: 1;
+  }
+
+  .skeletonContent {
+    padding: var(--space-4);
+  }
+
+  .skeletonTitle {
+    height: 20px;
+    width: 80%;
+  }
+
+  .skeletonPrice {
+    height: 24px;
+  }
+}
+
+/* 768px+ - 3 column grid */
+@media (min-width: 768px) {
+  .skeletonGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+/* 1024px+ - 4 column grid */
+@media (min-width: 1024px) {
+  .skeletonGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .skeletonImage,
+  .skeletonTitle,
+  .skeletonPrice,
+  .skeletonButton,
+  .pulse {
+    animation: none;
+  }
+}

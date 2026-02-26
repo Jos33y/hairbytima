@@ -1,0 +1,1139 @@
+/* ==========================================================================
+   ProductDetailsPage Styles - Mobile-First Responsive
+   Class names matched exactly to ProductDetailsPage.jsx
+   ========================================================================== */
+
+.page {
+  min-height: 100vh;
+  padding: var(--space-4) 0 var(--space-16);
+  padding-bottom: 100px; /* Space for mobile sticky */
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* ==========================================================================
+   Breadcrumb
+   ========================================================================== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.breadcrumbLink {
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbLink:hover {
+  color: var(--accent-primary);
+}
+
+.separator {
+  color: var(--text-muted);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-secondary);
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   Not Found
+   ========================================================================== */
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+  padding: var(--space-12) var(--space-4);
+  color: var(--text-tertiary);
+}
+
+.notFound svg {
+  margin-bottom: var(--space-6);
+  opacity: 0.3;
+}
+
+.notFound h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.notFound p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+/* ==========================================================================
+   Product Grid - Mobile First (Single Column)
+   JSX uses: productGrid
+   ========================================================================== */
+
+.productGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+/* ==========================================================================
+   Gallery
+   ========================================================================== */
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mainImage {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+/* JSX uses: productImage */
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ==========================================================================
+   Badges - JSX uses: badges, badgeNew, badgeSale
+   ========================================================================== */
+
+.badges {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  z-index: 2;
+}
+
+.badgeNew {
+  padding: var(--space-1) var(--space-2);
+  font-size: 10px;
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-md);
+  background: var(--accent-gold);
+  color: var(--bg-primary);
+}
+
+.badgeSale {
+  padding: var(--space-1) var(--space-2);
+  font-size: 10px;
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-md);
+  background: #ef4444;
+  color: white;
+}
+
+/* ==========================================================================
+   Zoom Button - JSX uses: zoomBtn
+   ========================================================================== */
+
+.zoomBtn {
+  position: absolute;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: var(--radius-full);
+  color: white;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 2;
+}
+
+.zoomBtn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Image Navigation - JSX uses: navBtn, prevBtn, nextBtn
+   ========================================================================== */
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  color: var(--bg-primary);
+  cursor: pointer;
+  opacity: 1;
+  transition: all var(--transition-fast);
+  z-index: 2;
+}
+
+.navBtn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevBtn {
+  left: var(--space-2);
+}
+
+.nextBtn {
+  right: var(--space-2);
+}
+
+/* ==========================================================================
+   Thumbnails
+   ========================================================================== */
+
+.thumbnails {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background: var(--bg-card);
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.thumbnail:hover {
+  border-color: var(--text-tertiary);
+}
+
+.thumbnailActive {
+  border-color: var(--accent-primary);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   Product Info
+   ========================================================================== */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.category {
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.category:hover {
+  opacity: 0.8;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   Price - JSX uses: priceWrapper, price, comparePrice, saveBadge
+   ========================================================================== */
+
+.priceWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.price {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+.comparePrice {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.saveBadge {
+  padding: var(--space-1) var(--space-2);
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   Short Description - JSX uses: shortDesc
+   ========================================================================== */
+
+.shortDesc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Trust Features - JSX uses: trustFeatures, trustItem, trustTitle, trustDesc
+   ========================================================================== */
+
+.trustFeatures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+}
+
+.trustItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.trustItem svg {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+
+.trustItem > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.trustTitle {
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.trustDesc {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  line-height: 1.3;
+}
+
+/* Legacy support - if just using span directly */
+.trustItem > span {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   Length Selector - JSX uses: lengthSelector, lengthHeader, lengthLabel, 
+   guideBtn, lengthOptions, lengthOption, lengthSelected
+   ========================================================================== */
+
+.lengthSelector {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.lengthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.lengthLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.lengthLabel strong {
+  color: var(--text-primary);
+  font-weight: var(--weight-medium);
+}
+
+.guideBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  color: var(--accent-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.guideBtn:hover {
+  text-decoration: underline;
+}
+
+.lengthOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.lengthOption {
+  min-width: 48px;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lengthOption:hover {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.lengthSelected {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+/* ==========================================================================
+   Quantity - JSX uses: quantityWrapper, quantityLabel, quantitySelector,
+   quantityBtn, quantityValue
+   ========================================================================== */
+
+.quantityWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.quantityLabel {
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+.quantitySelector {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  width: fit-content;
+}
+
+.quantityBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.quantityBtn:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+.quantityBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quantityValue {
+  min-width: 40px;
+  text-align: center;
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Actions
+   ========================================================================== */
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.actions > button:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.wishlistBtn,
+.shareBtn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.wishlistBtn:hover,
+.shareBtn:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.wishlisted {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: rgba(236, 72, 153, 0.1);
+}
+
+.addedBtn {
+  background: #22c55e !important;
+  border-color: #22c55e !important;
+}
+
+/* ==========================================================================
+   Stock Status
+   ========================================================================== */
+
+.stockStatus {
+  font-size: 13px;
+}
+
+.inStock {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: #22c55e;
+}
+
+.outOfStock {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: #ef4444;
+}
+
+/* ==========================================================================
+   Product Tabs
+   ========================================================================== */
+
+.tabsSection {
+  margin-bottom: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-default);
+}
+
+.tabsNav {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-default);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabsNav::-webkit-scrollbar {
+  display: none;
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--text-tertiary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  margin-bottom: -1px;
+}
+
+.tabBtn:hover {
+  color: var(--text-primary);
+}
+
+.tabBtnActive {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+}
+
+.tabContent {
+  min-height: 150px;
+}
+
+.tabPane {
+  padding: var(--space-4) 0;
+}
+
+.tabPane h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.tabPane h4 {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin: var(--space-5) 0 var(--space-2) 0;
+}
+
+.tabPane p {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.tabPane a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.tabPane a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Specs Grid
+   ========================================================================== */
+
+.specs {
+  margin-top: var(--space-4);
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.specLabel {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.specValue {
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Care List
+   ========================================================================== */
+
+.careList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.careList li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.careList li svg {
+  flex-shrink: 0;
+  color: var(--accent-primary);
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+}
+
+.careNote {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding: var(--space-3);
+  background: rgba(236, 72, 153, 0.05);
+  border: 1px solid rgba(236, 72, 153, 0.1);
+  border-radius: var(--radius-lg);
+  color: var(--accent-primary);
+}
+
+.careNote svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.careNote p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Policy Links
+   ========================================================================== */
+
+.policyLinks {
+  padding-top: var(--space-4);
+}
+
+.policyLinks p {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.policyBtns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.policyLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--accent-primary);
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.policyLink:hover {
+  background: rgba(236, 72, 153, 0.15);
+  text-decoration: none;
+}
+
+.policyLink svg {
+  transition: transform var(--transition-fast);
+  width: 14px;
+  height: 14px;
+}
+
+.policyLink:hover svg {
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   Related Products
+   ========================================================================== */
+
+.related {
+  border-top: 1px solid var(--border-default);
+  padding-top: var(--space-10);
+}
+
+.relatedTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-5);
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   Mobile Sticky Add to Cart
+   ========================================================================== */
+
+.mobileSticky {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-default);
+  z-index: 100;
+  gap: var(--space-3);
+  /* Safe area for notched phones */
+  padding-bottom: max(var(--space-3), env(safe-area-inset-bottom));
+}
+
+.mobileStickyPrice {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.mobileStickyName {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobileStickyAmount {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement (Mobile First)
+   ========================================================================== */
+
+/* 400px+ */
+@media (min-width: 400px) {
+  .container {
+    padding: 0 var(--space-5);
+  }
+
+  .title {
+    font-size: var(--text-2xl);
+  }
+
+  .price {
+    font-size: var(--text-2xl);
+  }
+
+  .thumbnail {
+    width: 68px;
+    height: 68px;
+  }
+
+  .trustFeatures {
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .trustItem span {
+    font-size: 13px;
+  }
+
+  .lengthOption {
+    min-width: 52px;
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .breadcrumbCurrent {
+    max-width: 180px;
+  }
+}
+
+/* 480px+ */
+@media (min-width: 480px) {
+  .page {
+    padding: var(--space-6) 0 var(--space-16);
+  }
+
+  .breadcrumb {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .breadcrumbCurrent {
+    max-width: 200px;
+  }
+
+  .productGrid {
+    gap: var(--space-8);
+  }
+
+  .gallery {
+    gap: var(--space-4);
+  }
+
+  .thumbnail {
+    width: 72px;
+    height: 72px;
+  }
+
+  .navBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .prevBtn {
+    left: var(--space-3);
+  }
+
+  .nextBtn {
+    right: var(--space-3);
+  }
+
+  .specsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .policyBtns {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .policyLink {
+    justify-content: flex-start;
+  }
+
+  .relatedGrid {
+    gap: var(--space-4);
+  }
+}
+
+/* 640px+ */
+@media (min-width: 640px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+
+  .notFound h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .title {
+    font-size: var(--text-3xl);
+  }
+
+  .wishlistBtn,
+  .shareBtn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .quantityBtn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .quantityValue {
+    min-width: 48px;
+  }
+}
+
+/* 768px+ */
+@media (min-width: 768px) {
+  .page {
+    padding: var(--space-8) 0 var(--space-20);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-8);
+  }
+
+  .productGrid {
+    gap: var(--space-10);
+    margin-bottom: var(--space-16);
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-lg);
+  }
+
+  .badgeNew,
+  .badgeSale {
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-3);
+  }
+
+  .info {
+    gap: var(--space-5);
+  }
+
+  .tabsSection {
+    margin-bottom: var(--space-16);
+    padding-top: var(--space-8);
+  }
+
+  .tabBtn {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .related {
+    padding-top: var(--space-16);
+  }
+
+  .relatedTitle {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-8);
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+/* 1024px+ - Desktop */
+@media (min-width: 1024px) {
+  .productGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+
+  /* Hide mobile sticky on desktop */
+  .mobileSticky {
+    display: none;
+  }
+
+  .navBtn {
+    opacity: 0;
+  }
+
+  .mainImage:hover .navBtn {
+    opacity: 1;
+  }
+
+  .prevBtn {
+    left: var(--space-4);
+  }
+
+  .nextBtn {
+    right: var(--space-4);
+  }
+
+  .wishlistBtn,
+  .shareBtn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .zoomBtn {
+    bottom: var(--space-4);
+    right: var(--space-4);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .navBtn,
+  .zoomBtn,
+  .thumbnail,
+  .lengthOption,
+  .wishlistBtn,
+  .shareBtn,
+  .tabBtn,
+  .policyLink {
+    transition: none;
+  }
+}

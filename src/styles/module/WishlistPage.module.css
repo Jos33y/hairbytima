@@ -1,0 +1,861 @@
+/* ==========================================================================
+   WishlistPage Styles - Mobile-First Responsive
+   HairByTimaBlaq - Fluid typography from 360px to 768px+
+   ========================================================================== */
+
+.page {
+  min-height: 100vh;
+  /* Fluid padding: 32px @ 360px → 48px @ 768px top, 48px → 64px bottom */
+  padding-top: clamp(2rem, 3.92vw + 1.12rem, 3rem);
+  padding-bottom: clamp(3rem, 3.92vw + 2.12rem, 4rem);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  /* Fluid padding: 16px @ 360px → 24px @ 768px */
+  padding: 0 clamp(1rem, 1.96vw + 0.56rem, 1.5rem);
+}
+
+/* ==========================================================================
+   Empty State - Mobile First
+   ========================================================================== */
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-12) var(--space-4);
+  min-height: 50vh;
+}
+
+.emptyIcon {
+  /* Fluid size: 80px @ 360px → 100px @ 768px */
+  width: clamp(80px, 4.9vw + 62.36px, 100px);
+  height: clamp(80px, 4.9vw + 62.36px, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-5);
+}
+
+.emptyIcon svg {
+  /* Fluid icon: 36px @ 360px → 48px @ 768px */
+  width: clamp(36px, 2.94vw + 25.42px, 48px);
+  height: clamp(36px, 2.94vw + 25.42px, 48px);
+}
+
+.emptyTitle {
+  font-family: var(--font-heading);
+  /* Fluid: 24px @ 360px → 32px @ 768px */
+  font-size: clamp(1.5rem, 1.96vw + 1.06rem, 2rem);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.emptyText {
+  /* Fluid: 14px @ 360px → 18px @ 768px */
+  font-size: clamp(0.875rem, 0.98vw + 0.655rem, 1.125rem);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  max-width: 320px;
+  line-height: var(--leading-relaxed);
+}
+
+.emptyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--accent-primary);
+  color: white;
+  border-radius: var(--radius-lg);
+  /* Fluid: 13px @ 360px → 14px @ 768px */
+  font-size: clamp(0.8125rem, 0.25vw + 0.76rem, 0.875rem);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  min-height: 48px;
+  transition: all var(--transition-base);
+}
+
+.emptyBtn:hover {
+  background: var(--accent-primary-hover);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pink-md);
+}
+
+/* ==========================================================================
+   Header - Mobile First (Compact Single Row)
+   ========================================================================== */
+
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  min-width: 0;
+  flex: 1;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem; /* 20px fixed on mobile */
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.count {
+  font-size: 0.8125rem; /* 13px */
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+/* Mobile: Icon-only share button */
+.shareBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.shareBtn span {
+  display: none;
+}
+
+.shareBtn:hover {
+  background: var(--accent-primary);
+  color: white;
+}
+
+/* Mobile: Compact clear button */
+.clearBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  background: transparent;
+  color: var(--text-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-size: 11px;
+  height: 36px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.clearBtn:hover {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+/* Shared Badge */
+.sharedBadge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--accent-primary);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  min-height: 40px;
+}
+
+/* Info Banner */
+.infoBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+  color: var(--text-secondary);
+  /* Fluid: 13px @ 360px → 14px @ 768px */
+  font-size: clamp(0.8125rem, 0.25vw + 0.76rem, 0.875rem);
+  line-height: var(--leading-relaxed);
+}
+
+.infoBanner svg {
+  flex-shrink: 0;
+  color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Grid - Mobile First (Single Column with Horizontal Cards)
+   ========================================================================== */
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   Card - Mobile First (Horizontal Layout, Image Full Height)
+   ========================================================================== */
+
+.card {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 1fr; /* Force single row to stretch */
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.imageLink {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  /* Stretch to fill full grid cell height */
+  align-self: stretch;
+  min-height: 130px;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.outOfStock {
+  position: absolute;
+  bottom: var(--space-2);
+  left: var(--space-2);
+  padding: 2px var(--space-2);
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--text-tertiary);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-sm);
+  z-index: 1;
+}
+
+.content {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-height: 130px;
+}
+
+.name {
+  font-size: 0.875rem; /* 14px */
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  text-decoration: none;
+  line-height: 1.3;
+  /* 2 line clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.2s ease;
+}
+
+.name:hover {
+  color: var(--accent-primary);
+}
+
+.category {
+  display: block;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-1);
+}
+
+.price {
+  font-size: 0.9375rem; /* 15px */
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+.comparePrice {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.addBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: var(--space-2);
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 10px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  height: 34px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.addBtn:hover:not(:disabled) {
+  background: var(--accent-primary-hover);
+  color: white;
+}
+
+.addBtn:disabled {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.addBtn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.removeBtn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.removeBtn:hover {
+  border-color: var(--error);
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.removeBtn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Wishlist button (for shared page) */
+.wishlistBtn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.wishlistBtn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.wishlistBtn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.wishlistBtnActive {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: rgba(236, 72, 153, 0.1);
+}
+
+/* Continue Section */
+.continueSection {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.continueBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  /* Fluid: 13px @ 360px → 14px @ 768px */
+  font-size: clamp(0.8125rem, 0.25vw + 0.76rem, 0.875rem);
+  text-decoration: none;
+  min-height: 44px;
+  transition: all var(--transition-fast);
+}
+
+.continueBtn:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Share Modal - Mobile First
+   ========================================================================== */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  z-index: 100;
+}
+
+.modal {
+  width: 100%;
+  max-width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  overflow: hidden;
+  /* Safe area for notched devices */
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modalTitle {
+  font-family: var(--font-heading);
+  /* Fluid: 18px @ 360px → 20px @ 768px */
+  font-size: clamp(1.125rem, 0.49vw + 1.015rem, 1.25rem);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+.modalClose {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text-tertiary);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.modalClose:hover {
+  color: var(--text-primary);
+}
+
+.modalText {
+  padding: var(--space-5);
+  padding-bottom: var(--space-3);
+  color: var(--text-secondary);
+  /* Fluid: 13px @ 360px → 14px @ 768px */
+  font-size: clamp(0.8125rem, 0.25vw + 0.76rem, 0.875rem);
+  line-height: 1.6;
+}
+
+.shareUrlContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: 0 var(--space-5);
+}
+
+.shareUrlInput {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  /* 16px to prevent iOS zoom */
+  font-size: 16px;
+  min-height: 48px;
+}
+
+.shareUrlInput:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  min-height: 48px;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.copyBtn:hover {
+  background: var(--accent-primary-hover);
+}
+
+.modalHint {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement (Mobile First)
+   ========================================================================== */
+
+/* 480px+ - Slightly larger elements */
+@media (min-width: 480px) {
+  .header {
+    gap: var(--space-3);
+  }
+
+  .title {
+    font-size: 1.375rem; /* 22px */
+  }
+
+  .shareBtn,
+  .clearBtn,
+  .backLink {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card {
+    grid-template-columns: 120px 1fr;
+  }
+
+  .imageLink {
+    min-height: 140px;
+  }
+
+  .content {
+    padding: var(--space-3) var(--space-4);
+    min-height: 140px;
+  }
+
+  .name {
+    font-size: 0.9375rem; /* 15px */
+  }
+
+  .price {
+    font-size: 1rem; /* 16px */
+  }
+
+  .addBtn {
+    font-size: 11px;
+    height: 38px;
+  }
+
+  .removeBtn,
+  .wishlistBtn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* 640px+ - 2 column grid with vertical cards */
+@media (min-width: 640px) {
+  .header {
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-5);
+    gap: var(--space-4);
+  }
+
+  .title {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  .count {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .backLink {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Share button shows text */
+  .shareBtn {
+    width: auto;
+    height: 44px;
+    padding: var(--space-2) var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .shareBtn span {
+    display: inline;
+    font-size: 14px;
+  }
+
+  .clearBtn {
+    font-size: 14px;
+    height: 44px;
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .infoBanner {
+    flex-direction: row;
+    text-align: left;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  /* Switch to vertical card layout */
+  .card {
+    display: block;
+    grid-template-columns: none;
+    grid-template-rows: none;
+  }
+
+  .imageLink {
+    aspect-ratio: 1;
+    min-height: auto;
+  }
+
+  .image {
+    position: relative;
+  }
+
+  .content {
+    padding: var(--space-4);
+    min-height: auto;
+  }
+
+  .name {
+    font-size: 1rem; /* 16px */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+  }
+
+  .price {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  .addBtn {
+    font-size: 12px;
+    height: 44px;
+  }
+
+  .removeBtn,
+  .wishlistBtn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .removeBtn svg,
+  .wishlistBtn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Modal becomes centered */
+  .modalOverlay {
+    align-items: center;
+    padding: var(--space-6);
+  }
+
+  .modal {
+    max-width: 480px;
+    border-radius: var(--radius-xl);
+    padding-bottom: 0;
+  }
+
+  .shareUrlContainer {
+    flex-direction: row;
+    gap: var(--space-2);
+  }
+
+  .shareUrlInput {
+    flex: 1;
+  }
+
+  .copyBtn {
+    width: auto;
+  }
+}
+
+/* 768px+ - 3 column grid */
+@media (min-width: 768px) {
+  .header {
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-6);
+  }
+
+  .title {
+    font-size: 1.75rem; /* 28px */
+  }
+
+  .count {
+    font-size: 1rem; /* 16px */
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+  }
+
+  .continueSection {
+    margin-top: var(--space-12);
+    padding-top: var(--space-8);
+  }
+}
+
+/* 1024px+ - 4 column grid */
+@media (min-width: 1024px) {
+  .title {
+    font-size: 2rem; /* 32px */
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .emptyState {
+    padding: var(--space-16) var(--space-6);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .image,
+  .emptyIcon,
+  .emptyBtn,
+  .shareBtn,
+  .clearBtn,
+  .addBtn,
+  .removeBtn,
+  .wishlistBtn,
+  .continueBtn,
+  .copyBtn {
+    transition: none;
+  }
+}

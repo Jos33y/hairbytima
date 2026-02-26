@@ -1,0 +1,537 @@
+/* ==========================================================================
+   Shop Filters Styles - Mobile-First Responsive
+   Filter Panel & Active Filters - Readable fonts (13px+ minimum)
+   ========================================================================== */
+
+/* ==========================================================================
+   Filter Panel
+   ========================================================================== */
+
+.filterPanel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-4);
+  overflow: hidden;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-default);
+  gap: var(--space-2);
+}
+
+.filterHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.filterHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.filterTitle {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.filterCount {
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  color: var(--accent-primary);
+  padding: 2px 8px;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: var(--radius-full);
+}
+
+.clearAllBtn {
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--text-tertiary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  padding: var(--space-1) var(--space-2);
+}
+
+.clearAllBtn:hover {
+  color: var(--accent-primary);
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--text-tertiary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.closeBtn:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+/* Filter Content - Mobile: Single column */
+.filterContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* Filter Sections */
+.filterSection {
+  border-bottom: 1px solid var(--border-default);
+}
+
+.filterSection:last-child {
+  border-bottom: none;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  min-height: 48px;
+}
+
+.sectionHeader:hover {
+  background: var(--bg-secondary);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.selectedCount {
+  font-size: 12px;
+  font-weight: var(--weight-regular);
+  color: var(--accent-primary);
+}
+
+.sectionContent {
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+/* ==========================================================================
+   Price Range
+   ========================================================================== */
+
+.priceInputs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.priceInputWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.priceLabel {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.priceInputGroup {
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+  overflow: hidden;
+}
+
+.priceInputGroup:focus-within {
+  border-color: var(--accent-primary);
+}
+
+.priceCurrency {
+  padding-left: var(--space-2);
+  font-size: 13px;
+  color: var(--text-tertiary);
+  user-select: none;
+}
+
+.priceInput {
+  flex: 1;
+  width: 100%;
+  padding: var(--space-2);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  min-height: 40px;
+}
+
+.priceInput:focus {
+  outline: none;
+}
+
+.priceInput::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* Hide number input spinners */
+.priceInput::-webkit-outer-spin-button,
+.priceInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.priceInput[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.priceSeparator {
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 0 var(--space-1);
+}
+
+.applyPriceBtn {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: white;
+  background: var(--accent-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  min-height: 36px;
+  transition: background var(--transition-fast);
+}
+
+.applyPriceBtn:hover {
+  background: var(--accent-primary-hover);
+}
+
+.priceHint {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin: var(--space-2) 0 0 0;
+}
+
+/* ==========================================================================
+   Length Grid - 3 columns
+   ========================================================================== */
+
+.lengthGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.lengthChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  min-height: 40px;
+  transition: all var(--transition-fast);
+}
+
+.lengthChip:hover {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.lengthChipActive {
+  background: rgba(236, 72, 153, 0.1);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Checkbox List
+   ========================================================================== */
+
+.checkboxList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  min-height: 32px;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkboxCustom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  color: white;
+  flex-shrink: 0;
+}
+
+.checkbox:checked + .checkboxCustom {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.checkbox:focus-visible + .checkboxCustom {
+  box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--accent-primary);
+}
+
+.checkboxItem:hover .checkboxCustom {
+  border-color: var(--accent-primary);
+}
+
+.checkboxLabel {
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.checkbox:checked ~ .checkboxLabel {
+  color: var(--text-primary);
+}
+
+.checkboxItem:hover .checkboxLabel {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Active Filters (Chips)
+   ========================================================================== */
+
+.activeFilters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  margin-bottom: var(--space-4);
+}
+
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--accent-primary);
+  background: rgba(236, 72, 153, 0.1);
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 32px;
+}
+
+.chip:hover {
+  background: rgba(236, 72, 153, 0.15);
+  border-color: var(--accent-primary);
+}
+
+.chipLabel {
+  white-space: nowrap;
+}
+
+.chipIcon {
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+  width: 14px;
+  height: 14px;
+}
+
+.chip:hover .chipIcon {
+  opacity: 1;
+}
+
+.clearAllChips {
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--text-tertiary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+  padding: var(--space-1) 0;
+}
+
+.clearAllChips:hover {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement (Mobile First)
+   ========================================================================== */
+
+/* 400px+ */
+@media (min-width: 400px) {
+  .filterHeader {
+    padding: var(--space-4);
+  }
+
+  .sectionHeader {
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .sectionContent {
+    padding: 0 var(--space-5) var(--space-4);
+  }
+}
+
+/* 480px+ */
+@media (min-width: 480px) {
+  .activeFilters {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .chipList {
+    width: auto;
+  }
+}
+
+/* 768px+ - 2 column filter layout */
+@media (min-width: 768px) {
+  .filterPanel {
+    margin-bottom: var(--space-6);
+  }
+
+  .filterHeader {
+    padding: var(--space-4) var(--space-6);
+    gap: var(--space-3);
+  }
+
+  .filterHeaderLeft,
+  .filterHeaderRight {
+    gap: var(--space-3);
+  }
+
+  .filterContent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filterSection {
+    border-bottom: none;
+    border-right: 1px solid var(--border-default);
+  }
+
+  .filterSection:nth-child(2n) {
+    border-right: none;
+  }
+
+  .filterSection:nth-child(n+3) {
+    border-top: 1px solid var(--border-default);
+  }
+
+  .sectionHeader {
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .sectionContent {
+    padding: 0 var(--space-6) var(--space-4);
+  }
+}
+
+/* 1024px+ - 4 column filter layout */
+@media (min-width: 1024px) {
+  .filterContent {
+    /* Price Range gets 1.3fr, others get 1fr each */
+    grid-template-columns: 1.4fr 1fr 1fr 0.9fr;
+  }
+
+  .filterSection {
+    border-right: 1px solid var(--border-default);
+  }
+
+  .filterSection:last-child {
+    border-right: none;
+  }
+
+  .filterSection:nth-child(2n) {
+    border-right: 1px solid var(--border-default);
+  }
+
+  .filterSection:nth-child(n+3) {
+    border-top: none;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .closeBtn,
+  .sectionHeader,
+  .priceInputGroup,
+  .applyPriceBtn,
+  .lengthChip,
+  .checkboxCustom,
+  .chip {
+    transition: none;
+  }
+}

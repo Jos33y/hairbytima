@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200, height=630">
+  <title>OG Image Generator - HairByTimaBlaq</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #111111;
+    }
+
+    /* Main OG Image Container - 1200x630 */
+    .og-image {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #111111 0%, #1a1a1a 50%, #111111 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Gradient orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.4;
+    }
+
+    .orb-1 {
+      width: 600px;
+      height: 600px;
+      background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
+      top: -200px;
+      right: -100px;
+    }
+
+    .orb-2 {
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+      bottom: -100px;
+      left: -50px;
+    }
+
+    .orb-3 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, #EC4899 0%, #9333EA 100%);
+      bottom: 50px;
+      right: 100px;
+      opacity: 0.2;
+    }
+
+    /* Grid pattern overlay */
+    .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    /* Content */
+    .content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px;
+    }
+
+    /* Crown icon */
+    .crown {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 24px;
+    }
+
+    .crown svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: #D4AF37;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+    }
+
+    /* Brand name */
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 500;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffffff 0%, #D4AF37 50%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+
+    /* Tagline */
+    .tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    /* Divider */
+    .divider {
+      width: 200px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #EC4899, #D4AF37, transparent);
+      margin-bottom: 40px;
+    }
+
+    /* Features */
+    .features {
+      display: flex;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(236, 72, 153, 0.15);
+      border: 1px solid rgba(236, 72, 153, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #EC4899;
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .feature-text {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* URL */
+    .url {
+      font-size: 20px;
+      font-weight: 500;
+      color: #EC4899;
+      letter-spacing: 2px;
+    }
+
+    /* Decorative elements */
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #D4AF37;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #D4AF37;
+    }
+
+    .sparkle-1 { top: 100px; left: 150px; }
+    .sparkle-2 { top: 200px; right: 200px; }
+    .sparkle-3 { bottom: 150px; left: 250px; }
+    .sparkle-4 { bottom: 200px; right: 150px; }
+    .sparkle-5 { top: 350px; left: 100px; width: 4px; height: 4px; }
+    .sparkle-6 { top: 400px; right: 120px; width: 6px; height: 6px; }
+
+    /* Border frame */
+    .frame {
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .frame::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    }
+
+    .frame::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #EC4899, transparent);
+    }
+  </style>
+</head>
+<body>
+  <div class="og-image">
+    <!-- Background elements -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-pattern"></div>
+    
+    <!-- Sparkles -->
+    <div class="sparkle sparkle-1"></div>
+    <div class="sparkle sparkle-2"></div>
+    <div class="sparkle sparkle-3"></div>
+    <div class="sparkle sparkle-4"></div>
+    <div class="sparkle sparkle-5"></div>
+    <div class="sparkle sparkle-6"></div>
+    
+    <!-- Frame -->
+    <div class="frame"></div>
+    
+    <!-- Content -->
+    <div class="content">
+      <!-- Crown -->
+      <div class="crown">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 20h20M4 20V10l4 4 4-8 4 8 4-4v10" />
+          <circle cx="12" cy="4" r="1.5" fill="#D4AF37" stroke="none" />
+        </svg>
+      </div>
+      
+      <!-- Brand -->
+      <h1 class="brand">HairByTimaBlaq</h1>
+      
+      <!-- Tagline -->
+      <p class="tagline">Premium Luxury Hair Extensions</p>
+      
+      <!-- Divider -->
+      <div class="divider"></div>
+      
+      <!-- Features -->
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          </div>
+          <span class="feature-text">100% Virgin Hair</span>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="feature-text">Premium Quality</span>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <span class="feature-text">Worldwide Shipping</span>
+        </div>
+      </div>
+      
+      <!-- URL -->
+      <p class="url">hairbytimablaq.com</p>
+    </div>
+  </div>
+
+  <script>
+    // Instructions for generating the image:
+    // 1. Open this file in Chrome
+    // 2. Open DevTools (F12)
+    // 3. Use device toolbar to set viewport to 1200x630
+    // 4. Take screenshot using DevTools (Ctrl+Shift+P -> "Capture screenshot")
+    // 5. Save as og-image.png
+    
+    console.log('OG Image Generator');
+    console.log('Viewport should be: 1200x630');
+    console.log('Current viewport:', window.innerWidth + 'x' + window.innerHeight);
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* ==========================================================================
+   OrderStatusHero - Large Status Display Styling
+   ========================================================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    text-align: left;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Status Icon
+   ========================================================================== */
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 600px) {
+  .iconWrapper {
+    margin-bottom: 0;
+  }
+}
+
+.pulse {
+  position: absolute;
+  inset: -4px;
+  border: 2px solid;
+  border-radius: 28px;
+  opacity: 0.3;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.08); opacity: 0.15; }
+}
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+.content {
+  flex: 1;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.375rem 0.875rem;
+  border-radius: 100px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.625rem;
+}
+
+.description {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+@media (min-width: 600px) {
+  .description {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Meta Info
+   ========================================================================== */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .meta {
+    justify-content: flex-start;
+  }
+}
+
+.orderNumber,
+.date {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.orderNumber {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.02em;
+}

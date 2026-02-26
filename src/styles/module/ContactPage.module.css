@@ -1,0 +1,772 @@
+/* ==========================================================================
+   ContactPage - Mobile-First Responsive
+   HairByTimaBlaq - Readable fonts (13px+ minimum)
+   ========================================================================== */
+
+.page {
+  min-height: 100vh;
+  padding-bottom: var(--space-10);
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Container
+   ========================================================================== */
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* ==========================================================================
+   Hero Section - Mobile First
+   ========================================================================== */
+
+.hero {
+  padding: var(--space-8) 0 var(--space-6);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  position: relative;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: var(--weight-light);
+}
+
+/* ==========================================================================
+   Contact Section
+   ========================================================================== */
+
+.contact {
+  padding: var(--space-2) 0;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+/* ==========================================================================
+   Info Card - Mobile First
+   ========================================================================== */
+
+.infoCard {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+  order: 2;
+}
+
+.infoCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-gold));
+  opacity: 0.5;
+}
+
+.infoTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  margin: 0 calc(-1 * var(--space-2));
+  border-radius: var(--radius-lg);
+  transition: background-color var(--transition-fast);
+}
+
+.infoItem:hover {
+  background: var(--bg-tertiary);
+}
+
+.infoIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.infoIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.infoItem:hover .infoIcon {
+  background: rgba(236, 72, 153, 0.2);
+  transform: scale(1.05);
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+/* FIXED: Was 10px, now 11px minimum for labels */
+.infoLabel {
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-tertiary);
+}
+
+.infoValue {
+  font-size: 14px;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  word-break: break-word;
+}
+
+a.infoValue:hover {
+  color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Divider
+   ========================================================================== */
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-default), transparent);
+  margin: var(--space-4) 0;
+}
+
+/* ==========================================================================
+   Business Hours
+   ========================================================================== */
+
+.hours {
+  margin-top: var(--space-2);
+}
+
+/* FIXED: Was 10px, now 11px minimum */
+.hoursTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 11px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-3);
+}
+
+.hoursTitle svg {
+  color: var(--accent-primary);
+  width: 14px;
+  height: 14px;
+}
+
+.hoursList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* FIXED: Was text-xs, now 13px minimum */
+.hoursItem {
+  display: flex;
+  gap: var(--space-2);
+  font-size: 13px;
+}
+
+.hoursDay {
+  color: var(--text-secondary);
+  min-width: 80px;
+}
+
+.hoursTime {
+  color: var(--text-primary);
+  font-weight: var(--weight-medium);
+}
+
+/* ==========================================================================
+   Form Card - Mobile First
+   ========================================================================== */
+
+.formCard {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+  order: 1;
+}
+
+.formCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-primary));
+  opacity: 0.5;
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.formTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+.formIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--accent-primary);
+}
+
+.formIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Honeypot - Hidden from humans */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   Textarea
+   ========================================================================== */
+
+.textareaWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.textareaLabel {
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--space-3);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: var(--leading-relaxed);
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.textareaError {
+  border-color: var(--error);
+}
+
+.errorText {
+  font-size: 12px;
+  color: var(--error);
+}
+
+/* ==========================================================================
+   Status Messages
+   ========================================================================== */
+
+.successMessage,
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  font-size: 13px;
+  line-height: var(--leading-relaxed);
+}
+
+.successMessage {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+
+.successMessage svg:first-child {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.sparkle {
+  margin-left: auto;
+  animation: sparkle 1.5s ease-in-out infinite;
+  display: none;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+.errorMessage {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--error);
+}
+
+.errorMessage svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* ==========================================================================
+   Submit Button - Touch friendly (48px min)
+   ========================================================================== */
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  width: 100%;
+  min-height: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.submitBtn:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--accent-primary-hover);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pink-md);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement (Mobile First)
+   ========================================================================== */
+
+/* 400px+ */
+@media (min-width: 400px) {
+  .container {
+    padding: 0 var(--space-5);
+  }
+
+  .hero {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+
+  .hero::before {
+    width: 400px;
+    height: 400px;
+  }
+
+  .title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .subtitle {
+    font-size: var(--text-base);
+  }
+
+  .contact {
+    padding: var(--space-4) 0;
+  }
+
+  .contactGrid {
+    gap: var(--space-5);
+  }
+
+  .infoCard,
+  .formCard {
+    padding: var(--space-6);
+  }
+
+  .infoTitle,
+  .formTitle {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-5);
+  }
+
+  .infoList {
+    gap: var(--space-4);
+  }
+
+  .infoItem {
+    padding: var(--space-3);
+  }
+
+  .infoIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .infoIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .infoLabel {
+    font-size: 12px;
+  }
+
+  .infoValue {
+    font-size: var(--text-base);
+  }
+
+  .hoursTitle {
+    font-size: 12px;
+  }
+
+  .hoursItem {
+    font-size: 14px;
+  }
+
+  .hoursDay {
+    min-width: 100px;
+  }
+
+  .formIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .formIcon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .form {
+    gap: var(--space-5);
+  }
+
+  .formRow {
+    gap: var(--space-4);
+  }
+
+  .textarea {
+    padding: var(--space-4);
+    font-size: var(--text-base);
+    min-height: 140px;
+  }
+
+  .successMessage,
+  .errorMessage {
+    padding: var(--space-4);
+    font-size: 14px;
+    gap: var(--space-3);
+  }
+
+  .submitBtn {
+    padding: var(--space-4) var(--space-6);
+    font-size: 14px;
+  }
+}
+
+/* 480px+ */
+@media (min-width: 480px) {
+  .page {
+    padding-bottom: var(--space-12);
+  }
+
+  .title {
+    font-size: var(--text-4xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-lg);
+  }
+}
+
+/* 640px+ - Two column form row */
+@media (min-width: 640px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+
+  .hero {
+    padding: var(--space-12) 0 var(--space-10);
+  }
+
+  .hero::before {
+    width: 500px;
+    height: 500px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sparkle {
+    display: block;
+  }
+
+  .submitBtn {
+    width: auto;
+    align-self: flex-start;
+  }
+}
+
+/* 768px+ - Larger spacing */
+@media (min-width: 768px) {
+  .hero {
+    padding: var(--space-16) 0 var(--space-12);
+  }
+
+  .hero::before {
+    width: 600px;
+    height: 600px;
+  }
+
+  .title {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+  }
+
+  .infoCard,
+  .formCard {
+    padding: var(--space-8);
+  }
+
+  .infoTitle,
+  .formTitle {
+    font-size: var(--text-2xl);
+  }
+
+  .infoIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+  }
+
+  .formIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .textarea {
+    min-height: 150px;
+  }
+
+  .successMessage,
+  .errorMessage {
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .submitBtn {
+    padding: var(--space-4) var(--space-8);
+  }
+}
+
+/* 1024px+ - Two column grid */
+@media (min-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-6);
+  }
+
+  .infoCard {
+    order: 1;
+  }
+
+  .formCard {
+    order: 2;
+  }
+
+  .divider {
+    margin: var(--space-6) 0;
+  }
+
+  .infoList {
+    gap: var(--space-5);
+  }
+
+  .formHeader {
+    margin-bottom: var(--space-6);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .infoIcon,
+  .submitBtn {
+    transition: none;
+  }
+
+  .submitBtn::before {
+    display: none;
+  }
+
+  .sparkle {
+    animation: none;
+  }
+
+  .spinner {
+    animation: none;
+  }
+}

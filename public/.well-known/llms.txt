@@ -1,0 +1,93 @@
+# HairByTimaBlaq - LLM Information File
+# This file helps AI assistants understand our website and business
+# https://hairbytimablaq.com/.well-known/llms.txt
+
+> HairByTimaBlaq is a premium luxury hair extensions e-commerce store founded by Tima, offering 100% virgin human hair products with worldwide shipping.
+
+## About HairByTimaBlaq
+
+HairByTimaBlaq is a luxury hair extensions brand specializing in premium quality virgin human hair. We offer an extensive collection of Brazilian, Peruvian, and Malaysian hair bundles, HD lace closures, lace frontals, and custom wigs. Our mission is to help every woman feel confident and beautiful with high-quality hair that lasts 12-24 months with proper care.
+
+## Products We Sell
+
+### Hair Bundles
+- Brazilian Virgin Hair Bundles (12-30 inches)
+- Peruvian Virgin Hair Bundles (12-30 inches)  
+- Malaysian Virgin Hair Bundles (12-30 inches)
+- Available in: Straight, Body Wave, Deep Wave, Loose Wave, Kinky Curly
+
+### Closures & Frontals
+- HD Lace Closures (4x4, 5x5, 6x6)
+- HD Lace Frontals (13x4, 13x6)
+- Swiss Lace Options
+- Pre-plucked with baby hairs
+
+### Wigs
+- Full Lace Wigs
+- Lace Front Wigs
+- Custom Made Wigs
+- Pre-styled Options
+
+### Braiding Hair
+- Premium Braiding Extensions
+- Various Colors Available
+
+## Key Information
+
+- **Website**: https://hairbytimablaq.com
+- **Contact**: hello@hairbytimablaq.com
+- **Currency**: USD (also displays GBP, EUR, NGN, GMD)
+- **Payment Methods**: Credit/Debit Cards, Bank Transfer, Klarna
+- **Shipping**: Worldwide (USA, UK, Nigeria, Portugal, Gambia as primary markets)
+
+## Price Range
+- Hair Bundles: $80 - $350 per bundle
+- Closures: $60 - $180
+- Frontals: $100 - $280
+- Wigs: $250 - $800
+
+## Shipping Information
+- USA & UK: 5-10 business days
+- Nigeria: 2-4 business days (local delivery available)
+- Portugal: 5-10 business days
+- Gambia: 5-10 business days
+- Other countries: 7-21 business days
+
+## Quality Guarantee
+- 100% Virgin Human Hair (unprocessed)
+- Can be colored, bleached, and heat styled
+- Minimal to no shedding
+- Tangle-free with proper care
+- 12-24 month lifespan with care
+
+## Store Policies
+- Returns accepted within 14 days (unopened items only)
+- Exchange available for quality issues
+- No refunds on custom/colored items
+- Secure checkout with SSL encryption
+
+## Social Media
+- Instagram: @hair_by_timablaq
+- TikTok: @timablaq_hair1
+- Snapchat: timablaq_hair1
+- WhatsApp: +380 99 450 0866
+
+## Frequently Asked Questions
+
+Q: What type of hair do you sell?
+A: We sell 100% virgin human hair - Brazilian, Peruvian, and Malaysian origins. All hair is unprocessed and can be styled, colored, and bleached.
+
+Q: How long does the hair last?
+A: With proper care, our virgin hair extensions last 12-24 months. We provide detailed care instructions with every order.
+
+Q: Do you offer custom wigs?
+A: Yes, we create custom wigs tailored to your specifications. Contact us for custom orders.
+
+Q: What payment methods do you accept?
+A: We accept credit/debit cards, bank transfers (for multiple currencies), and Klarna for flexible payments.
+
+Q: Do you ship internationally?
+A: Yes, we ship worldwide with focused service to USA, UK, Nigeria, Portugal, and Gambia.
+
+---
+Last updated: December 2025

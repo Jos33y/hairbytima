@@ -1,0 +1,11 @@
+export { default as HeroSection } from './HeroSection';
+export { default as TrustBar } from './TrustBar';
+export { default as CategoriesSection } from './CategoriesSection';
+export { default as BestsellersSection } from './BestsellersSection';
+export { default as HairCareSection } from './HairCareSection';
+export { default as TestimonialsSection } from './TestimonialsSection';
+export { default as StoreLocationSection } from './StoreLocationSection';
+export { default as InstagramSection } from './InstagramSection';
+export { default as NewsletterSection } from './NewsletterSection';
+export { default as CTASection } from './CTASection';
+export { default as HelpSection } from './HelpSection';

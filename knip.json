@@ -1,0 +1,32 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "src/main.jsx",
+    "api/**/*.js"
+  ],
+  "project": [
+    "src/**/*.{js,jsx}",
+    "api/**/*.js"
+  ],
+  "ignore": [
+    "src/vite-env.d.ts",
+    "**/*.config.js",
+    "**/*.config.cjs",
+    "dist/**",
+    "node_modules/**"
+  ],
+  "ignoreDependencies": [
+    "@vitejs/plugin-react",
+    "vite",
+    "globals",
+    "@types/react",
+    "@types/react-dom",
+    "eslint",
+    "eslint-plugin-react-hooks",
+    "eslint-plugin-react-refresh",
+    "@eslint/js"
+  ],
+  "ignoreBinaries": [
+    "vercel"
+  ]
+}

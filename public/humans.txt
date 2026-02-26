@@ -1,0 +1,48 @@
+/* TEAM */
+
+Founder & Creative Director: Tima
+Site: hairbytimablaq.com
+Location: Global (Nigeria, UK, USA)
+
+Developer: The Brick DEV
+Role: Full-Stack Development
+Technologies: React, Vite, Supabase, Vercel
+
+/* THANKS */
+
+Our amazing customers who trust us with their hair journey
+The open source community for incredible tools
+Vercel for hosting infrastructure
+Supabase for database services
+Resend for email delivery
+
+/* SITE */
+
+Last update: December 2025
+Language: English
+Doctype: HTML5
+Standards: CSS3, ES6+
+Components: React 19
+State: Zustand
+Animations: Framer Motion
+Icons: Lucide React
+Fonts: Playfair Display, Inter (Google Fonts)
+IDE: Various
+Build: Vite
+Deploy: Vercel
+
+/* PHILOSOPHY */
+
+"Life is short, make every hair flip satisfying."
+
+We believe every woman deserves to feel like royalty.
+Premium quality. No compromises. Pure confidence.
+
+/* CONTACT */
+
+General: hello@hairbytimablaq.com
+WhatsApp: +380 99 450 0866
+Phone: +220 743 1514
+Instagram: @hair_by_timablaq
+TikTok: @timablaq_hair1
+Snapchat: timablaq_hair1

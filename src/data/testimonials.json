@@ -1,0 +1,59 @@
+{
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Amara O.",
+      "location": "Lagos, Nigeria",
+      "rating": 5,
+      "text": "I have tried so many hair vendors and HairByTimaBlaq is by far the best. The hair is soft, minimal shedding, and true to length. This is my third order!",
+      "product": "Brazilian Body Wave Bundle",
+      "verified": true,
+      "date": "2024-11-15"
+    },
+    {
+      "id": "2",
+      "name": "Fatou D.",
+      "location": "Banjul, Gambia",
+      "rating": 5,
+      "text": "Walked into the store and the customer service was amazing. They helped me pick the perfect closure for my face shape. The quality speaks for itself.",
+      "product": "HD Lace Closure",
+      "verified": true,
+      "date": "2024-11-08"
+    },
+    {
+      "id": "3",
+      "name": "Jessica T.",
+      "location": "London, UK",
+      "rating": 5,
+      "text": "Finally found a brand I can trust for international shipping. My frontal arrived perfectly packaged and blends seamlessly with my skin. Top quality!",
+      "product": "Swiss Lace Frontal",
+      "verified": true,
+      "date": "2024-10-28"
+    },
+    {
+      "id": "4",
+      "name": "Aisha K.",
+      "location": "Accra, Ghana",
+      "rating": 5,
+      "text": "The Malaysian straight bundles hold curls beautifully and revert back perfectly after washing. Worth every penny for the longevity.",
+      "product": "Malaysian Straight Bundle",
+      "verified": true,
+      "date": "2024-10-20"
+    },
+    {
+      "id": "5",
+      "name": "Chiamaka N.",
+      "location": "Abuja, Nigeria",
+      "rating": 5,
+      "text": "Second time ordering and the consistency is unmatched. Same quality every time. The wigs are so natural looking, everyone thinks it is my real hair!",
+      "product": "Full Lace Wig",
+      "verified": true,
+      "date": "2024-10-12"
+    }
+  ],
+  "stats": {
+    "totalReviews": 248,
+    "averageRating": 4.9,
+    "fiveStarPercentage": 94
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "mainStore": {
+    "id": "gambia",
+    "name": "HairByTimaBlaq Gambia",
+    "status": "open",
+    "address": {
+      "street": "Kairaba Avenue",
+      "city": "Serrekunda",
+      "country": "The Gambia",
+      "full": "Kairaba Avenue, Serrekunda, The Gambia"
+    },
+    "hours": {
+      "weekdays": "9:00 AM - 7:00 PM",
+      "saturday": "10:00 AM - 6:00 PM",
+      "sunday": "Closed"
+    },
+    "phone": "+220 XXX XXXX",
+    "video": {
+      "teaser": "https://ghjfjgkmlypfkbfrtbjq.supabase.co/storage/v1/object/public/videos/store/store-teaser.mp4",
+      "full": "https://ghjfjgkmlypfkbfrtbjq.supabase.co/storage/v1/object/public/videos/store/store-full.mp4"
+    },
+    "services": [
+      "Walk-in Shopping",
+      "Local Pickup",
+      "Hair Consultation",
+      "Custom Orders"
+    ]
+  },
+  "pickup": {
+    "title": "Local Pickup Available",
+    "description": "Order online and pick up at our Gambia store. Save on shipping!",
+    "benefits": [
+      "No shipping fees",
+      "Same-day pickup",
+      "Personal consultation"
+    ]
+  },
+  "comingSoon": [
+    {
+      "city": "Lagos",
+      "country": "Nigeria",
+      "year": "2025"
+    }
+  ],
+  "about": {
+    "ownerVideo": "https://ghjfjgkmlypfkbfrtbjq.supabase.co/storage/v1/object/public/videos/store/about-video-one-01.mp4",
+    "instagram": "https://www.instagram.com/hair_by_timablaq/"
+  }
+}

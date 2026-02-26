@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Admin Loader - Content overlay with percentage loader
+   ========================================================================== */
+
+/* Overlay - Mobile first (full screen, no sidebar) */
+.loaderOverlay {
+  position: fixed;
+  top: 56px; /* Mobile header height */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary, #111111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .loaderOverlay {
+    top: 60px;
+  }
+}
+
+/* Desktop - Account for sidebar */
+@media (min-width: 1024px) {
+  .loaderOverlay {
+    top: 64px;
+    left: 260px; /* Sidebar width */
+  }
+}
+
+.loaderOverlay.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loaderContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem;
+}
+
+/* Circular spinner with percentage */
+.loaderSpinner {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .loaderSpinner {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.spinnerRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  border-top-color: var(--accent-primary, #EC4899);
+  animation: spin 1s linear infinite;
+}
+
+.spinnerPercent {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #fff);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  .spinnerPercent {
+    font-size: 1.125rem;
+  }
+}
+
+/* Progress bar */
+.loaderBarContainer {
+  width: 160px;
+}
+
+@media (min-width: 768px) {
+  .loaderBarContainer {
+    width: 200px;
+  }
+}
+
+.loaderBar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loaderFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary, #EC4899), var(--accent-gold, #D4AF37));
+  border-radius: 2px;
+  transition: width 0.15s ease-out;
+  position: relative;
+}
+
+/* Shimmer effect on fill */
+.loaderFill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+.loaderText {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #888);
+  letter-spacing: 0.3px;
+}
+
+@media (min-width: 768px) {
+  .loaderText {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}

@@ -1,0 +1,81 @@
+# robots.txt for HairByTimaBlaq
+# https://hairbytimablaq.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://hairbytimablaq.com/sitemap.xml
+Sitemap: https://hairbytimablaq.com/api/sitemap/products
+
+# Disallow admin and API routes
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/
+Disallow: /api/*
+
+# Disallow checkout process (no need to index)
+Disallow: /checkout
+Disallow: /checkout/*
+
+# Disallow user-specific pages
+Disallow: /my-orders
+Disallow: /track-order
+
+# Allow important static assets
+Allow: /og-image.png
+Allow: /logo*.png
+Allow: /favicon*
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /checkout
+Disallow: /my-orders
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /checkout
+Disallow: /my-orders
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /checkout
+Disallow: /my-orders
+
+User-agent: Anthropic-AI
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /checkout
+Disallow: /my-orders
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /checkout
+Disallow: /my-orders
+
+User-agent: Google-Extended
+Allow: /
+
+# Host
+Host: https://hairbytimablaq.com

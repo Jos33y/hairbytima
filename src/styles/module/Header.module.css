@@ -1,0 +1,750 @@
+/* ==========================================================================
+   Header Component - Mobile-First Responsive
+   HairByTimaBlaq - Touch targets 44-48px, fonts 13px+ minimum
+   ========================================================================== */
+
+/* ==========================================================================
+   Top Bar - Hidden on mobile by default
+   ========================================================================== */
+
+.topbar {
+  display: none;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-dark);
+  padding: var(--space-2) 0;
+  font-size: 13px;
+  position: relative;
+  z-index: calc(var(--z-sticky) + 10);
+}
+
+.topbarContainer {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbarText {
+  color: var(--text-tertiary);
+  margin: 0;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.topbarRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.topbarLink {
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  position: relative;
+  font-size: 13px;
+  padding: var(--space-1) 0;
+}
+
+.topbarLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-primary);
+  transition: width var(--transition-fast);
+}
+
+.topbarLink:hover {
+  color: var(--accent-primary);
+}
+
+.topbarLink:hover::after {
+  width: 100%;
+}
+
+.topbarDivider {
+  color: var(--border-default);
+}
+
+/* ==========================================================================
+   Currency Selector
+   ========================================================================== */
+
+.currencyWrapper {
+  position: relative;
+  z-index: 9999;
+}
+
+.currencyTrigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  padding: var(--space-1) var(--space-2);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 32px;
+}
+
+.currencyTrigger:hover {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.currencyTrigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.currencyFlag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 13px;
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.currencyFlag svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.currencyCode {
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.02em;
+  font-size: 12px;
+}
+
+.currencyBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+}
+
+.currencyDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2);
+  min-width: 180px;
+  z-index: 9999;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(236, 72, 153, 0.1);
+  overflow: hidden;
+}
+
+.currencyOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 44px;
+}
+
+.currencyOption:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+.currencyOption.active {
+  background: var(--accent-primary-light);
+  color: var(--accent-primary);
+}
+
+.currencyOption .currencyFlag {
+  width: 22px;
+  height: 15px;
+}
+
+.currencyDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+}
+
+.currencyDetails .currencyCode {
+  font-size: 14px;
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+}
+
+.currencyName {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.currencyOption.active .currencyDetails .currencyCode {
+  color: var(--accent-primary);
+}
+
+.currencyCheck {
+  color: var(--accent-primary);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+}
+
+/* ==========================================================================
+   Main Header - Mobile First
+   ========================================================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-default);
+  transition: all var(--transition-base);
+}
+
+.header.scrolled {
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   Logo - Mobile First
+   ========================================================================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: transform var(--transition-fast);
+}
+
+.logoText {
+  display: none;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* ==========================================================================
+   Desktop Navigation - Hidden on mobile
+   ========================================================================== */
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.navLink {
+  position: relative;
+  padding: var(--space-2) var(--space-3);
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  overflow: hidden;
+}
+
+.navLink::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.navLink:hover::before {
+  width: 24px;
+}
+
+.navLink.active {
+  color: var(--accent-primary);
+}
+
+.navLink.active::before {
+  width: 24px;
+}
+
+/* ==========================================================================
+   Actions - Mobile First (44px touch targets)
+   ========================================================================== */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.iconButton {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.iconButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.iconButton:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.cartButton {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.cartButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cartButton:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.cartBadge,
+.wishlistBadge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: var(--weight-semibold);
+  color: white;
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+  padding: 0 3px;
+  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.4);
+}
+
+/* ==========================================================================
+   Mobile Menu Button - 44px touch target
+   ========================================================================== */
+
+.menuButton {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.menuButton svg {
+  width: 22px;
+  height: 22px;
+}
+
+.menuButton:hover {
+  background: var(--bg-secondary);
+}
+
+/* ==========================================================================
+   Mobile Navigation - 48px touch targets for links
+   ========================================================================== */
+
+.mobileNav {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  padding: var(--space-4);
+  padding-bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0));
+  overflow-y: auto;
+  z-index: var(--z-fixed);
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  min-height: 48px;
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.mobileNavLink.active {
+  color: var(--accent-primary);
+  background: var(--accent-primary-light);
+}
+
+.mobileNavDivider {
+  height: 1px;
+  background: var(--border-default);
+  margin: var(--space-3) 0;
+}
+
+/* ==========================================================================
+   Mobile Currency Selector - 48px touch targets
+   ========================================================================== */
+
+.mobileCurrency {
+  padding: var(--space-4);
+  margin-top: var(--space-4);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+}
+
+.mobileCurrencyLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-3);
+}
+
+.mobileCurrencyOptions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+.mobileCurrencyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  min-height: 48px;
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mobileCurrencyBtn:hover {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.mobileCurrencyBtn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+.mobileCurrencyBtn .currencyFlag {
+  width: 20px;
+  height: 14px;
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement
+   ========================================================================== */
+
+/* 400px+ - Slightly larger header */
+@media (min-width: 400px) {
+  .container {
+    padding: 0 var(--space-4);
+    height: 60px;
+  }
+
+  .logoImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobileNav {
+    top: 60px;
+    padding: var(--space-5);
+    padding-bottom: calc(var(--space-5) + env(safe-area-inset-bottom, 0));
+  }
+
+  .mobileNavLink {
+    padding: var(--space-4);
+    min-height: 52px;
+    font-size: var(--text-lg);
+  }
+
+  .mobileCurrency {
+    padding: var(--space-5);
+    margin-top: var(--space-5);
+  }
+
+  .mobileCurrencyLabel {
+    font-size: 13px;
+    margin-bottom: var(--space-4);
+  }
+
+  .mobileCurrencyOptions {
+    gap: var(--space-3);
+  }
+
+  .mobileCurrencyBtn {
+    min-height: 52px;
+    font-size: 15px;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .mobileCurrencyBtn .currencyFlag {
+    width: 22px;
+    height: 15px;
+  }
+}
+
+/* 640px+ - Show logo text on larger phones */
+@media (min-width: 640px) {
+  .container {
+    height: 64px;
+    gap: var(--space-4);
+  }
+
+  .logoImage {
+    width: 44px;
+    height: 44px;
+  }
+
+  .logoText {
+    display: block;
+    font-size: var(--text-lg);
+  }
+
+  .cartBadge,
+  .wishlistBadge {
+    min-width: 18px;
+    height: 18px;
+    font-size: 10px;
+    padding: 0 4px;
+  }
+
+  .mobileNav {
+    top: 64px;
+    padding: var(--space-6);
+    padding-bottom: calc(var(--space-6) + env(safe-area-inset-bottom, 0));
+  }
+
+  .mobileNavLink {
+    min-height: 56px;
+  }
+
+  .mobileCurrencyBtn {
+    min-height: 56px;
+  }
+}
+
+/* 768px+ - Desktop layout */
+@media (min-width: 768px) {
+  .topbar {
+    display: block;
+  }
+
+  .topbarContainer {
+    padding: 0 var(--space-6);
+  }
+
+  .topbarText {
+    font-size: 14px;
+  }
+
+  .topbarRight {
+    gap: var(--space-4);
+  }
+
+  .topbarLink {
+    font-size: 14px;
+  }
+
+  .currencyTrigger {
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    min-height: 36px;
+  }
+
+  .currencyFlag {
+    width: 20px;
+    height: 14px;
+  }
+
+  .currencyCode {
+    font-size: 13px;
+  }
+
+  .currencyDropdown {
+    min-width: 200px;
+  }
+
+  .currencyOption {
+    gap: var(--space-3);
+    padding: var(--space-3);
+  }
+
+  .currencyOption .currencyFlag {
+    width: 24px;
+    height: 16px;
+  }
+
+  .container {
+    padding: 0 var(--space-6);
+    height: var(--header-height);
+    gap: var(--space-8);
+  }
+
+  .menuButton {
+    display: none;
+  }
+
+  .logo {
+    gap: var(--space-3);
+  }
+
+  .logoImage {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logoText {
+    font-size: var(--text-xl);
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .navLink {
+    padding: var(--space-2) var(--space-4);
+    font-size: 15px;
+  }
+
+  .mobileNav {
+    display: none;
+  }
+
+  .actions {
+    gap: var(--space-2);
+  }
+}
+
+/* 1024px+ - More spacing */
+@media (min-width: 1024px) {
+  .nav {
+    gap: var(--space-2);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .menuButton,
+  .iconButton,
+  .cartButton,
+  .mobileNavLink,
+  .mobileCurrencyBtn,
+  .currencyTrigger,
+  .currencyOption,
+  .navLink {
+    transition: none;
+  }
+} 

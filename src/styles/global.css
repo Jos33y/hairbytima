@@ -1,0 +1,608 @@
+/* ==========================================================================
+   HairByTimaBlaq - Global Styles & Modern Reset
+   2025 Best Practices
+   ========================================================================== */
+
+/* ========== Modern CSS Reset ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* CRITICAL: Prevent horizontal scroll */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* ========== Typography Base ========== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-tight);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: var(--text-6xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+
+h2 {
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+}
+
+h3 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-medium);
+}
+
+h4 {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-medium);
+}
+
+h5 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+}
+
+h6 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+}
+
+p {
+  margin-bottom: var(--space-4);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+a:hover {
+  color: var(--accent-primary-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+strong, b {
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--text-sm);
+  color: var(--text-tertiary);
+}
+
+/* ========== Lists ========== */
+ul, ol {
+  list-style: none;
+}
+
+/* ========== Images & Media ========== */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+}
+
+/* Ensure iframes/embeds don't overflow */
+iframe,
+embed,
+object {
+  max-width: 100%;
+}
+
+/* ========== Forms ========== */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Remove default button styles */
+button,
+[role="button"] {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Improve consistency of default buttons */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+/* ========== Selection ========== */
+::selection {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+/* ========== Scrollbar Styling - Modern ========== */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+  border: 3px solid var(--bg-secondary);
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary-hover);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) var(--bg-secondary);
+}
+
+/* ========== Container ========== */
+.hbt-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .hbt-container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hbt-container {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .hbt-container {
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+  }
+}
+
+/* Full width container */
+.hbt-container-fluid {
+  width: 100%;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .hbt-container-fluid {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+/* ========== Grid System ========== */
+.hbt-grid {
+  display: grid;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.hbt-grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hbt-grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hbt-grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1023px) {
+  .hbt-grid-cols-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .hbt-grid-cols-3,
+  .hbt-grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 479px) {
+  .hbt-grid-cols-2,
+  .hbt-grid-cols-3,
+  .hbt-grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== Flex Utilities ========== */
+.hbt-flex {
+  display: flex;
+}
+
+.hbt-flex-col {
+  flex-direction: column;
+}
+
+.hbt-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hbt-flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hbt-flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* ========== Visibility ========== */
+.hbt-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hbt-hidden {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .hbt-hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hbt-hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* ========== Loading State ========== */
+.hbt-loading {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ========== Disabled State ========== */
+.hbt-disabled,
+[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========== Focus Visible ========== */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ========== Backdrop Blur ========== */
+.hbt-backdrop-blur {
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+/* ========== Text Truncate ========== */
+.hbt-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hbt-line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hbt-line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ========== Aspect Ratios ========== */
+.hbt-aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.hbt-aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.hbt-aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+/* ========== Glass Effect ========== */
+.hbt-glass {
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========== Gradient Text ========== */
+.hbt-gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hbt-gradient-text-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== Smooth Transitions ========== */
+.hbt-transition {
+  transition: all var(--transition-base);
+}
+
+.hbt-transition-fast {
+  transition: all var(--transition-fast);
+}
+
+.hbt-transition-slow {
+  transition: all var(--transition-slow);
+}
+
+/* ========== Hover Effects ========== */
+.hbt-hover-lift {
+  transition: transform var(--transition-base);
+}
+
+.hbt-hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hbt-hover-scale {
+  transition: transform var(--transition-base);
+}
+
+.hbt-hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* ========== No Select ========== */
+.hbt-no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* ========== Pointer Events ========== */
+.hbt-pointer-events-none {
+  pointer-events: none;
+}
+
+.hbt-pointer-events-auto {
+  pointer-events: auto;
+}
+
+/* ========== Overflow ========== */
+.hbt-overflow-hidden {
+  overflow: hidden;
+}
+
+.hbt-overflow-scroll {
+  overflow: auto;
+}
+
+/* ========== Position ========== */
+.hbt-relative {
+  position: relative;
+}
+
+.hbt-absolute {
+  position: absolute;
+}
+
+.hbt-fixed {
+  position: fixed;
+}
+
+.hbt-sticky {
+  position: sticky;
+}
+
+/* ========== Page Wrapper ========== */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.hbt-page {
+  flex: 1;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ========== Mobile Overflow Prevention ========== */
+/* Prevent animation/decorative elements from causing overflow */
+[class*="orb"],
+[class*="glow"],
+[class*="particle"],
+[class*="Background"] {
+  pointer-events: none;
+}
+
+/* Safe area insets for notched devices (iPhone X+, etc.) */
+@supports (padding: env(safe-area-inset-bottom)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Footer safe area */
+  footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Fix for 100vw causing horizontal scroll (scrollbar width issue) */
+.hbt-full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure sections don't overflow */
+section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ========== Accessibility ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .hbt-no-print {
+    display: none !important;
+  }
+}
+
+/* ========== High DPI Displays ========== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}

@@ -1,0 +1,302 @@
+/* ==========================================================================
+   ImageLightbox Styles - Fullscreen image viewer - Mobile First
+   ========================================================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+/* Close Button */
+.closeBtn {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  color: white;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.closeBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Image Counter */
+.counter {
+  position: absolute;
+  top: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-1) var(--space-3);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: white;
+  z-index: 10;
+}
+
+/* Image Container */
+.imageContainer {
+  position: relative;
+  max-width: 95vw;
+  max-height: 75vh;
+  cursor: default;
+}
+
+.image {
+  max-width: 95vw;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  user-select: none;
+}
+
+/* Navigation Buttons */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  color: white;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.navBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.navBtn:hover {
+  background: rgba(236, 72, 153, 0.8);
+  border-color: var(--accent-primary);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.navPrev {
+  left: var(--space-3);
+}
+
+.navNext {
+  right: var(--space-3);
+}
+
+/* Thumbnails - Horizontal scroll on mobile */
+.thumbnails {
+  position: absolute;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  z-index: 10;
+  max-width: 90vw;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail:hover {
+  opacity: 0.9;
+}
+
+.thumbnailActive {
+  border-color: var(--accent-primary);
+  opacity: 1;
+}
+
+/* Keyboard Hint - Hidden on mobile */
+.hint {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement
+   ========================================================================== */
+
+/* 400px+ */
+@media (min-width: 400px) {
+  .closeBtn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .navBtn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .navPrev {
+    left: var(--space-4);
+  }
+
+  .navNext {
+    right: var(--space-4);
+  }
+
+  .thumbnail {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* 480px+ */
+@media (min-width: 480px) {
+  .imageContainer {
+    max-width: 92vw;
+    max-height: 78vh;
+  }
+
+  .image {
+    max-width: 92vw;
+    max-height: 78vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .counter {
+    font-size: var(--text-sm);
+  }
+}
+
+/* 640px+ */
+@media (min-width: 640px) {
+  .hint {
+    display: block;
+    position: absolute;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+  }
+
+  .thumbnails {
+    bottom: calc(var(--space-4) + 24px);
+  }
+}
+
+/* 768px+ */
+@media (min-width: 768px) {
+  .closeBtn {
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 48px;
+    height: 48px;
+  }
+
+  .closeBtn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .imageContainer {
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+
+  .image {
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+
+  .navBtn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .navBtn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .navPrev {
+    left: var(--space-6);
+  }
+
+  .navNext {
+    right: var(--space-6);
+  }
+
+  .thumbnails {
+    bottom: var(--space-6);
+    gap: var(--space-2);
+  }
+
+  .thumbnail {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .closeBtn,
+  .navBtn,
+  .thumbnail {
+    transition: none;
+  }
+}

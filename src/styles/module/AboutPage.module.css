@@ -1,0 +1,780 @@
+/* ==========================================================================
+   About Page - Mobile-First Responsive
+   HairByTimaBlaq - Fluid typography from 360px to 768px+
+   ========================================================================== */
+
+.page {
+  min-height: 100vh;
+  padding-bottom: var(--space-12);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  /* 16px @ 360px → 24px @ 768px */
+  padding: 0 clamp(1rem, 1.96vw + 0.56rem, 1.5rem);
+}
+
+/* ==========================================================================
+   Hero Section - Fluid Typography
+   
+   Formula: clamp(min, vw-coefficient + base, max)
+   Calculated for smooth scaling from 360px → 768px
+   
+   Title: 28px @ 360px → 56px @ 768px
+   Subtitle: 14px @ 360px → 20px @ 768px
+   Padding top: 48px @ 360px → 80px @ 768px
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  /* 48px @ 360px → 80px @ 768px: clamp(3rem, 7.84vw + 0.24rem, 5rem) */
+  padding-top: clamp(3rem, 7.84vw + 0.24rem, 5rem);
+  /* 32px @ 360px → 48px @ 768px */
+  padding-bottom: clamp(2rem, 3.92vw + 1.12rem, 3rem);
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  /* 260px @ 360px → 600px @ 768px */
+  width: clamp(260px, 83.33vw - 40px, 600px);
+  /* 180px @ 360px → 400px @ 768px */
+  height: clamp(180px, 53.92vw - 14.12px, 400px);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(236, 72, 153, 0.12) 0%,
+    rgba(236, 72, 153, 0.05) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.heroLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  /* 11px @ 360px → 13px @ 768px */
+  font-size: clamp(0.6875rem, 0.49vw + 0.58rem, 0.8125rem);
+  font-weight: var(--weight-medium);
+  color: var(--accent-primary);
+  background: rgba(236, 72, 153, 0.1);
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  /* 16px @ 360px → 24px @ 768px */
+  margin-bottom: clamp(1rem, 1.96vw + 0.56rem, 1.5rem);
+}
+
+.title {
+  font-family: var(--font-heading);
+  /* 28px @ 360px → 56px @ 768px: (56-28)/(768-360) = 6.86vw, base = 28 - (6.86% * 360) = 3.3px */
+  font-size: clamp(1.75rem, 6.86vw + 0.21rem, 3.5rem);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  line-height: 1.1;
+  /* 12px @ 360px → 16px @ 768px */
+  margin-bottom: clamp(0.75rem, 0.98vw + 0.53rem, 1rem);
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  /* 14px @ 360px → 20px @ 768px: (20-14)/(768-360) = 1.47vw, base = 14 - (1.47% * 360) = 8.71px */
+  font-size: clamp(0.875rem, 1.47vw + 0.545rem, 1.25rem);
+  color: var(--text-tertiary);
+  font-weight: var(--weight-light);
+  /* 260px @ 360px → 500px @ 768px */
+  max-width: clamp(260px, 58.82vw + 48.24px, 500px);
+  margin: 0 auto;
+  line-height: var(--leading-relaxed);
+}
+
+/* ==========================================================================
+   Stats Bar - Mobile First
+   ========================================================================== */
+
+.statsBar {
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.statsGrid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  text-align: center;
+}
+
+.statIcon {
+  color: var(--accent-primary);
+  margin-bottom: var(--space-1);
+  width: 18px;
+  height: 18px;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+/* ==========================================================================
+   Founder Section - Mobile First (Single Column)
+   ========================================================================== */
+
+.founder {
+  padding: var(--space-10) 0;
+}
+
+.founderGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  text-align: center;
+}
+
+/* Image Side */
+.founderImageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.founderImage {
+  position: relative;
+  width: 220px;
+  height: 280px;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+}
+
+/* Actual founder image */
+.founderImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Crown overlay - sits on top of image */
+.founderImageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: var(--space-4);
+  background: linear-gradient(
+    to top,
+    rgba(17, 17, 17, 0.9) 0%,
+    rgba(17, 17, 17, 0.6) 50%,
+    transparent 100%
+  );
+  color: var(--accent-gold);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.founderImage:hover .founderImageOverlay {
+  opacity: 1;
+}
+
+/* Fallback placeholder if image fails */
+.founderImagePlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+  color: var(--accent-primary);
+  opacity: 0.5;
+}
+
+.founderImageDecor {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+  border-radius: var(--radius-xl);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.founderImageRing {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--accent-primary);
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.founderBadge {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  white-space: nowrap;
+}
+
+.founderBadge svg {
+  color: var(--accent-gold);
+  width: 14px;
+  height: 14px;
+}
+
+.founderBadge span {
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+/* Content Side */
+.founderContent {
+  max-width: 100%;
+}
+
+.founderName {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.founderHandle {
+  font-size: 14px;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-5);
+}
+
+.founderQuote {
+  position: relative;
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border-left: none;
+}
+
+.founderStory {
+  margin-bottom: var(--space-6);
+}
+
+.founderStory p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.founderStory p:last-child {
+  margin-bottom: 0;
+}
+
+.founderSocial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-3) var(--space-5);
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  min-height: 48px;
+  transition: all var(--transition-base);
+}
+
+.founderSocial svg:first-child {
+  color: var(--accent-primary);
+  width: 18px;
+  height: 18px;
+}
+
+.founderSocial svg:last-child {
+  color: var(--text-muted);
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.founderSocial:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.founderSocial:hover svg:last-child {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Values Section - Mobile First (Single Column)
+   ========================================================================== */
+
+.values {
+  padding: var(--space-10) 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.sectionSubtitle {
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.valueCard {
+  position: relative;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.valueCard:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-pink-sm);
+}
+
+.valueCardpink .valueIconWrapper {
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--accent-primary);
+}
+
+.valueCardgold .valueIconWrapper {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--accent-gold);
+}
+
+.valueIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
+}
+
+.valueTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.valueDescription {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.valueDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent-primary), transparent);
+  opacity: 0.03;
+  border-radius: 0 var(--radius-xl) 0 100%;
+}
+
+/* ==========================================================================
+   Promise Section - Mobile First
+   ========================================================================== */
+
+.promise {
+  padding: var(--space-10) 0;
+}
+
+.promiseCard {
+  position: relative;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8) var(--space-5);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.promiseGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 150px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(236, 72, 153, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.promiseIcon {
+  color: var(--accent-gold);
+  margin-bottom: var(--space-3);
+  width: 28px;
+  height: 28px;
+}
+
+.promiseTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-4);
+}
+
+.promiseText {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 540px;
+  margin: 0 auto var(--space-6);
+}
+
+.promiseBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--accent-primary);
+  color: white;
+  border-radius: var(--radius-lg);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  min-height: 48px;
+  transition: all var(--transition-base);
+}
+
+.promiseBtn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition-fast);
+}
+
+.promiseBtn:hover {
+  background: var(--accent-primary-hover);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pink-md);
+}
+
+.promiseBtn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement (Mobile First)
+   Hero and container use fluid clamp() - no overrides needed
+   ========================================================================== */
+
+/* 400px+ - Component refinements */
+@media (min-width: 400px) {
+  .statsGrid {
+    gap: var(--space-8);
+  }
+
+  .statIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .statValue {
+    font-size: var(--text-3xl);
+  }
+
+  .statLabel {
+    font-size: 14px;
+  }
+
+  .founderImage {
+    width: 260px;
+    height: 320px;
+  }
+
+  .founderBadge {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .founderBadge svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .founderBadge span {
+    font-size: 14px;
+  }
+
+  .founderName {
+    font-size: var(--text-3xl);
+  }
+
+  .founderHandle {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-6);
+  }
+
+  .founderQuote {
+    font-size: var(--text-lg);
+    padding: var(--space-6);
+  }
+
+  .founderStory p {
+    font-size: var(--text-base);
+  }
+
+  .founderSocial {
+    width: auto;
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .sectionSubtitle {
+    font-size: var(--text-base);
+  }
+
+  .valueCard {
+    padding: var(--space-8);
+  }
+
+  .valueIconWrapper {
+    width: 56px;
+    height: 56px;
+    margin-bottom: var(--space-5);
+  }
+
+  .valueDescription {
+    font-size: var(--text-base);
+  }
+
+  .promiseCard {
+    padding: var(--space-10) var(--space-6);
+  }
+
+  .promiseIcon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-4);
+  }
+
+  .promiseTitle {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .promiseText {
+    font-size: var(--text-base);
+  }
+
+  .promiseBtn {
+    font-size: 14px;
+    padding: var(--space-4) var(--space-8);
+  }
+}
+
+/* 640px+ - Layout changes */
+@media (min-width: 640px) {
+  .statsBar {
+    padding: var(--space-8) 0;
+  }
+
+  .statsGrid {
+    gap: var(--space-12);
+  }
+}
+
+/* 768px+ - Desktop final values */
+@media (min-width: 768px) {
+  .page {
+    padding-bottom: var(--space-16);
+  }
+
+  /* Hero uses fluid clamp() - values hit max around this breakpoint */
+
+  .founder {
+    padding: var(--space-16) 0;
+  }
+
+  .founderImage {
+    width: 280px;
+    height: 340px;
+  }
+
+  .founderImageDecor {
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .founderImageRing {
+    bottom: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .founderStory {
+    margin-bottom: var(--space-8);
+  }
+
+  .values {
+    padding: var(--space-16) 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: var(--space-12);
+  }
+
+  .promiseCard {
+    padding: var(--space-16) var(--space-8);
+  }
+
+  .promiseGlow {
+    width: 400px;
+    height: 200px;
+  }
+
+  .promiseText {
+    font-size: var(--text-lg);
+    margin: 0 auto var(--space-8);
+  }
+}
+
+/* 1024px+ - Two column founder grid, 3 column values */
+@media (min-width: 1024px) {
+  .founderGrid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-12);
+    text-align: left;
+  }
+
+  .founderQuote {
+    padding: 0;
+    padding-left: var(--space-6);
+    background: transparent;
+    border-radius: 0;
+    border-left: 3px solid var(--accent-gold);
+  }
+
+  .founderBadge {
+    left: auto;
+    right: -20px;
+    bottom: 20px;
+    transform: none;
+  }
+
+  .founderSocial {
+    justify-content: flex-start;
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .founderImageOverlay,
+  .valueCard,
+  .founderSocial,
+  .promiseBtn {
+    transition: none;
+  }
+}

@@ -1,0 +1,971 @@
+/* ==========================================================================
+   HomePageSections - Mobile-First Responsive Design
+   HairByTimaBlaq
+   ========================================================================== */
+
+/* ==========================================================================
+   Testimonials Section
+   ========================================================================== */
+
+.testimonials {
+  padding: var(--space-10) 0;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .testimonials {
+    padding: var(--space-16) 0;
+  }
+}
+
+.testimonialStats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding: var(--space-3);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 480px) {
+  .testimonialStats {
+    gap: var(--space-6);
+    max-width: 360px;
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-xl);
+  }
+}
+
+@media (min-width: 768px) {
+  .testimonialStats {
+    margin-bottom: var(--space-10);
+  }
+}
+
+.testimonialStat {
+  text-align: center;
+}
+
+.testimonialStatValue {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+@media (min-width: 480px) {
+  .testimonialStatValue {
+    font-size: var(--text-2xl);
+  }
+}
+
+.testimonialStatStars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-top: var(--space-1);
+}
+
+.testimonialStatLabel {
+  display: block;
+  font-size: 10px;
+  color: var(--text-tertiary);
+  margin-top: var(--space-1);
+}
+
+@media (min-width: 480px) {
+  .testimonialStatLabel {
+    font-size: var(--text-xs);
+  }
+}
+
+.testimonialStatDivider {
+  width: 1px;
+  height: 32px;
+  background: var(--border-default);
+}
+
+@media (min-width: 480px) {
+  .testimonialStatDivider {
+    height: 40px;
+  }
+}
+
+/* Swiper Container */
+.testimonialSlider {
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .testimonialSlider {
+    margin-top: var(--space-8);
+  }
+}
+
+.testimonialSwiper {
+  padding-bottom: var(--space-10) !important;
+}
+
+.testimonialSwiper :global(.swiper-pagination) {
+  bottom: 0 !important;
+}
+
+/* Testimonial Card */
+.testimonialCard {
+  position: relative;
+  padding: var(--space-5);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .testimonialCard {
+    padding: var(--space-6);
+  }
+}
+
+.testimonialCard:hover {
+  border-color: var(--accent-primary);
+}
+
+.testimonialQuote {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  color: var(--accent-primary);
+  opacity: 0.2;
+}
+
+@media (min-width: 640px) {
+  .testimonialQuote {
+    top: var(--space-4);
+    right: var(--space-4);
+  }
+}
+
+.testimonialStars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-3);
+}
+
+.testimonialText {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+  font-style: italic;
+  flex: 1;
+}
+
+.testimonialAuthor {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  gap: var(--space-2);
+}
+
+.testimonialAuthorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonialName {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+.testimonialLocation {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+.testimonialVerified {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 10px;
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+@media (min-width: 480px) {
+  .testimonialVerified {
+    font-size: var(--text-xs);
+  }
+}
+
+/* Swiper Pagination Dots */
+.testimonialDot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: var(--border-default) !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+  margin: 0 var(--space-1) !important;
+}
+
+.testimonialDotActive {
+  background: var(--accent-primary) !important;
+  width: 24px !important;
+  border-radius: var(--radius-full) !important;
+}
+
+/* ==========================================================================
+   Instagram Section - Responsive Grid
+   ========================================================================== */
+
+.instagram {
+  padding: var(--space-8) 0;
+  background: var(--bg-secondary);
+}
+
+@media (min-width: 768px) {
+  .instagram {
+    padding: var(--space-12) 0;
+  }
+}
+
+.instagramHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .instagramHeader {
+    margin-bottom: var(--space-6);
+  }
+}
+
+.instagramTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+@media (min-width: 480px) {
+  .instagramTitle {
+    font-size: var(--text-base);
+  }
+}
+
+.instagramTitle svg {
+  color: var(--accent-primary);
+  width: 16px;
+  height: 16px;
+}
+
+@media (min-width: 480px) {
+  .instagramTitle svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.instagramFollow {
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 480px) {
+  .instagramFollow {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+  }
+}
+
+.instagramFollow:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* Mobile: 2x3 grid, Tablet: 3x2, Desktop: 6x1 */
+.instagramGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .instagramGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .instagramGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.instagramPost {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+@media (min-width: 640px) {
+  .instagramPost {
+    border-radius: var(--radius-lg);
+  }
+}
+
+.instagramImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.instagramOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.instagramPost:hover .instagramOverlay {
+  opacity: 1;
+}
+
+.instagramStats {
+  display: flex;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .instagramStats {
+    gap: var(--space-4);
+  }
+}
+
+.instagramStat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: white;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+}
+
+@media (min-width: 640px) {
+  .instagramStat {
+    font-size: var(--text-sm);
+  }
+}
+
+.instagramPostPlaceholder {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+}
+
+.instagramPostPlaceholder .instagramOverlay {
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   Newsletter Section
+   ========================================================================== */
+
+.newsletter {
+  padding: var(--space-10) 0;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+}
+
+@media (min-width: 768px) {
+  .newsletter {
+    padding: var(--space-16) 0;
+  }
+}
+
+.newsletterWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .newsletterWrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    gap: var(--space-8);
+  }
+}
+
+.newsletterContent {
+  flex: 1;
+}
+
+.newsletterTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+@media (min-width: 768px) {
+  .newsletterTitle {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+  }
+}
+
+.newsletterText {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .newsletterText {
+    font-size: var(--text-sm);
+  }
+}
+
+.newsletterForm {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .newsletterForm {
+    max-width: 400px;
+  }
+}
+
+.newsletterInputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .newsletterInputWrapper {
+    flex-direction: row;
+  }
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-size: 1rem; /* 16px prevents iOS zoom */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsletterInput:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+.newsletterInput::placeholder {
+  color: var(--text-muted);
+}
+
+.newsletterBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .newsletterBtn {
+    width: auto;
+  }
+}
+
+.newsletterBtn:hover:not(:disabled) {
+  background: var(--accent-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pink-md);
+}
+
+.newsletterBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.newsletterBtnLoading {
+  display: flex;
+  gap: 4px;
+}
+
+.newsletterBtnDot {
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  animation: dotPulse 1.4s infinite ease-in-out both;
+}
+
+.newsletterBtnDot:nth-child(1) { animation-delay: -0.32s; }
+.newsletterBtnDot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes dotPulse {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+.newsletterMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+}
+
+@media (min-width: 480px) {
+  .newsletterMessage {
+    justify-content: flex-start;
+  }
+}
+
+.newsletterMessageSuccess {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.newsletterMessageError {
+  background: var(--error-light);
+  color: var(--error);
+}
+
+/* ==========================================================================
+   CTA Section
+   ========================================================================== */
+
+.cta {
+  padding: var(--space-12) 0;
+  background: var(--bg-primary);
+}
+
+@media (min-width: 768px) {
+  .cta {
+    padding: var(--space-20) 0;
+  }
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .ctaContent {
+    padding: 0 var(--space-4);
+  }
+}
+
+.ctaTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .ctaTitle {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+  }
+}
+
+@media (min-width: 768px) {
+  .ctaTitle {
+    font-size: var(--text-3xl);
+  }
+}
+
+.ctaDescription {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+@media (min-width: 480px) {
+  .ctaDescription {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+  }
+}
+
+@media (min-width: 768px) {
+  .ctaDescription {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-8);
+  }
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+@media (min-width: 400px) {
+  .ctaButtons {
+    gap: var(--space-3);
+  }
+}
+
+.ctaPrimaryBtn,
+.ctaSecondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 400px) {
+  .ctaPrimaryBtn,
+  .ctaSecondaryBtn {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--text-sm);
+  }
+}
+
+@media (min-width: 480px) {
+  .ctaPrimaryBtn,
+  .ctaSecondaryBtn {
+    padding: var(--space-3) var(--space-6);
+  }
+}
+
+.ctaPrimaryBtn {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.ctaPrimaryBtn:hover,
+.ctaPrimaryBtn:focus,
+.ctaPrimaryBtn:active {
+  background: var(--accent-primary-hover);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pink-md);
+}
+
+.ctaSecondaryBtn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+}
+
+.ctaSecondaryBtn:hover {
+  border-color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Hair Care Section (if included in this file)
+   ========================================================================== */
+
+.hairCare {
+  padding: var(--space-12) 0;
+  background: var(--bg-primary);
+}
+
+@media (min-width: 768px) {
+  .hairCare {
+    padding: var(--space-16) 0;
+  }
+}
+
+.hairCareWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .hairCareWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+}
+
+.hairCareContent {
+  max-width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .hairCareContent {
+    max-width: 400px;
+    text-align: left;
+  }
+}
+
+.hairCareLabel {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--accent-gold);
+  margin-bottom: var(--space-3);
+}
+
+.hairCareQuickFacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .hairCareQuickFacts {
+    margin: var(--space-6) 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.hairCareQuickFact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 640px) {
+  .hairCareQuickFact {
+    padding: var(--space-3) var(--space-4);
+  }
+}
+
+.hairCareQuickFact > div {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hairCareQuickFactLabel {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 640px) {
+  .hairCareQuickFactLabel {
+    font-size: var(--text-xs);
+  }
+}
+
+.hairCareQuickFactValue {
+  font-size: var(--text-xs);
+  color: var(--text-primary);
+  font-weight: var(--weight-medium);
+}
+
+@media (min-width: 640px) {
+  .hairCareQuickFactValue {
+    font-size: var(--text-sm);
+  }
+}
+
+.hairCareBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hairCareBtn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.hairCareTips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .hairCareTips {
+    gap: var(--space-3);
+  }
+}
+
+.hairCareTip {
+  padding: var(--space-3);
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 480px) {
+  .hairCareTip {
+    padding: var(--space-4);
+    border-radius: var(--radius-xl);
+  }
+}
+
+.hairCareTip:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-4px);
+}
+
+.hairCareTipIcon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-primary-light);
+  border-radius: var(--radius-md);
+  color: var(--accent-primary);
+  margin-bottom: var(--space-2);
+}
+
+@media (min-width: 480px) {
+  .hairCareTipIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-3);
+  }
+}
+
+@media (min-width: 640px) {
+  .hairCareTipIcon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.hairCareTipTitle {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+@media (min-width: 480px) {
+  .hairCareTipTitle {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-1);
+  }
+}
+
+.hairCareTipText {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  line-height: var(--leading-relaxed);
+}
+
+@media (min-width: 480px) {
+  .hairCareTipText {
+    font-size: var(--text-xs);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonialCard,
+  .instagramPost:hover .instagramImage,
+  .hairCareTip:hover {
+    transform: none;
+  }
+}

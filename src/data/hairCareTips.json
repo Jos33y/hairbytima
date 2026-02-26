@@ -1,0 +1,74 @@
+{
+  "tips": [
+    {
+      "id": "washing",
+      "title": "Washing",
+      "shortDescription": "Sulfate-free shampoo, wash weekly",
+      "icon": "Droplets",
+      "color": "#EC4899",
+      "details": [
+        "Use sulfate-free shampoo only",
+        "Wash in downward motion",
+        "Limit to once per week"
+      ]
+    },
+    {
+      "id": "detangling",
+      "title": "Detangling",
+      "shortDescription": "Start from ends, work upward",
+      "icon": "Brush",
+      "color": "#D4AF37",
+      "details": [
+        "Always start from the ends",
+        "Use a loop brush or wide-tooth comb",
+        "Detangle before and after washing"
+      ]
+    },
+    {
+      "id": "sleeping",
+      "title": "Night Care",
+      "shortDescription": "Silk bonnet, loose braids",
+      "icon": "Moon",
+      "color": "#8B5CF6",
+      "details": [
+        "Braid or twist hair loosely",
+        "Use silk or satin pillowcase",
+        "Never sleep with wet hair"
+      ]
+    },
+    {
+      "id": "heat-styling",
+      "title": "Heat Styling",
+      "shortDescription": "Protectant spray, under 350°F",
+      "icon": "Flame",
+      "color": "#F59E0B",
+      "details": [
+        "Always use heat protectant spray",
+        "Keep temperature under 350°F",
+        "Limit heat styling to 2-3 times weekly"
+      ]
+    }
+  ],
+  "quickFacts": [
+    {
+      "label": "Lifespan",
+      "value": "12-18 months",
+      "note": "With proper care"
+    },
+    {
+      "label": "Wash",
+      "value": "Weekly",
+      "note": "Or as needed"
+    },
+    {
+      "label": "Max Heat",
+      "value": "350°F",
+      "note": "Use protectant"
+    },
+    {
+      "label": "Storage",
+      "value": "Silk bag",
+      "note": "Cool, dry place"
+    }
+  ]
+}

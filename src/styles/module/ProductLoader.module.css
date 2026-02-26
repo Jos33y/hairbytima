@@ -1,0 +1,337 @@
+/* ==========================================================================
+   ProductLoader - Mobile-First Responsive (360px+)
+   HairByTimaBlaq - Skeleton Loading State
+   ========================================================================== */
+
+.loader {
+  min-height: 100vh;
+  padding: var(--space-4) 0 var(--space-12);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* ==========================================================================
+   Breadcrumb - Mobile First
+   ========================================================================== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.sep {
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+}
+
+/* ==========================================================================
+   Skeleton Base with Shimmer Animation
+   ========================================================================== */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--bg-elevated) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--radius-md);
+  height: 16px;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ==========================================================================
+   Product Grid - Mobile First (Stacked)
+   ========================================================================== */
+
+.productGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+/* ==========================================================================
+   Gallery - Mobile First
+   ========================================================================== */
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mainImage {
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--bg-elevated) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--radius-xl);
+  animation: shimmer 1.5s infinite;
+}
+
+.thumbnails {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: var(--space-1);
+}
+
+.thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--bg-elevated) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--radius-md);
+  animation: shimmer 1.5s infinite;
+}
+
+/* ==========================================================================
+   Info Section - Mobile First
+   ========================================================================== */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.descLines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* ==========================================================================
+   Options Section - Mobile First
+   ========================================================================== */
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.lengthBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.lengthBtn {
+  width: 48px;
+  height: 36px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--bg-elevated) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--radius-md);
+  animation: shimmer 1.5s infinite;
+}
+
+/* ==========================================================================
+   Actions Section - Mobile First
+   ========================================================================== */
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* ==========================================================================
+   Features Section - Mobile First
+   ========================================================================== */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-3);
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement
+   ========================================================================== */
+
+/* 400px+ - Slightly larger elements */
+@media (min-width: 400px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-5);
+  }
+
+  .thumbnail {
+    width: 64px;
+    height: 64px;
+  }
+
+  .lengthBtn {
+    width: 52px;
+    height: 38px;
+  }
+
+  .actions {
+    flex-direction: row;
+  }
+}
+
+/* 480px+ - Larger thumbnails and spacing */
+@media (min-width: 480px) {
+  .loader {
+    padding: var(--space-6) 0 var(--space-16);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-6);
+  }
+
+  .sep {
+    font-size: var(--text-sm);
+  }
+
+  .skeleton {
+    height: 18px;
+  }
+
+  .productGrid {
+    gap: var(--space-8);
+  }
+
+  .gallery {
+    gap: var(--space-4);
+  }
+
+  .mainImage {
+    border-radius: var(--radius-2xl);
+  }
+
+  .thumbnails {
+    gap: var(--space-3);
+  }
+
+  .thumbnail {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-lg);
+  }
+
+  .info {
+    gap: var(--space-4);
+  }
+
+  .descLines {
+    margin-top: var(--space-4);
+  }
+
+  .lengthBtn {
+    width: 56px;
+    height: 40px;
+  }
+
+  .actions {
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .features {
+    padding: var(--space-5);
+    border-radius: var(--radius-xl);
+    margin-top: var(--space-4);
+    gap: var(--space-4);
+  }
+}
+
+/* 768px+ - Side by side layout prep */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-6);
+  }
+
+  .breadcrumb {
+    margin-bottom: var(--space-8);
+  }
+
+  .skeleton {
+    height: 20px;
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+  }
+
+  .features {
+    padding: var(--space-6);
+  }
+}
+
+/* 1024px+ - Full desktop two-column layout */
+@media (min-width: 1024px) {
+  .loader {
+    padding: var(--space-8) 0 var(--space-20);
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton,
+  .mainImage,
+  .thumbnail,
+  .lengthBtn {
+    animation: none;
+  }
+}

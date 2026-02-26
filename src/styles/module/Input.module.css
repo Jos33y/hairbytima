@@ -1,0 +1,168 @@
+/* ==========================================================================
+   Input Component Styles - Enhanced with luxury aesthetics
+   ========================================================================== */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+/* Label */
+.label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.required {
+  color: var(--accent-primary);
+  margin-left: var(--space-1);
+}
+
+/* Input Container */
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  overflow: hidden;
+}
+
+.inputContainer:hover:not(.error):not(.focused) {
+  border-color: var(--text-tertiary);
+}
+
+.inputContainer.focused {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+/* Input Field */
+.input {
+  flex: 1;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  outline: none;
+  line-height: var(--leading-normal);
+  transition: all var(--transition-fast);
+}
+
+.input::placeholder {
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.inputContainer.focused .input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:disabled {
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* With Icons */
+.input.hasLeftIcon {
+  padding-left: var(--space-11);
+}
+
+.input.hasRightIcon {
+  padding-right: var(--space-11);
+}
+
+.iconLeft,
+.iconRight {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.iconLeft {
+  left: var(--space-4);
+}
+
+.iconRight {
+  right: var(--space-4);
+}
+
+/* Icon color on focus */
+.inputContainer.focused .iconLeft,
+.inputContainer.focused .iconRight {
+  color: var(--accent-primary);
+}
+
+/* Focus Line - Animated underline */
+.focusLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-gold));
+  transform-origin: center;
+}
+
+/* Error State */
+.inputContainer.error {
+  border-color: var(--error);
+}
+
+.inputContainer.error.focused {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.inputContainer.error .focusLine {
+  background: var(--error);
+}
+
+.inputContainer.error .iconLeft,
+.inputContainer.error .iconRight {
+  color: var(--error);
+}
+
+/* Helper Text */
+.helperText {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  padding-left: var(--space-1);
+}
+
+.errorText {
+  color: var(--error);
+}
+
+/* Autofill styling - removes ugly browser default */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-primary) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Disabled container state */
+.inputContainer:has(.input:disabled) {
+  background: var(--bg-secondary);
+  border-color: var(--border-subtle);
+  opacity: 0.7;
+}
+
+.inputContainer:has(.input:disabled) .iconLeft,
+.inputContainer:has(.input:disabled) .iconRight {
+  color: var(--text-muted);
+}

@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Button Component - Mobile-First Responsive (360px+)
+   HairByTimaBlaq
+   ========================================================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Sizes - Mobile First (compact)
+   ========================================================================== */
+
+.sm {
+  padding: var(--space-1) var(--space-3);
+  font-size: 10px;
+  border-radius: var(--radius-md);
+}
+
+.md {
+  padding: var(--space-2) var(--space-4);
+  font-size: 11px;
+  border-radius: var(--radius-md);
+}
+
+.lg {
+  padding: var(--space-3) var(--space-5);
+  font-size: 11px;
+  border-radius: var(--radius-lg);
+}
+
+/* ==========================================================================
+   Variants
+   ========================================================================== */
+
+.primary {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--accent-primary-hover);
+  border-color: var(--accent-primary-hover);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pink-md);
+}
+
+.secondary {
+  background: transparent;
+  border-color: var(--border-default);
+  color: var(--text-primary);
+}
+
+.secondary:hover:not(:disabled) {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.outline {
+  background: transparent;
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.outline:hover:not(:disabled) {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Full Width
+   ========================================================================== */
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Loading State
+   ========================================================================== */
+
+.loading {
+  pointer-events: none;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   Icon
+   ========================================================================== */
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==========================================================================
+   Text
+   ========================================================================== */
+
+.text {
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement
+   ========================================================================== */
+
+/* 400px+ - Slightly larger buttons */
+@media (min-width: 400px) {
+  .button {
+    gap: var(--space-2);
+    border-radius: var(--radius-lg);
+  }
+
+  .sm {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  .md {
+    padding: var(--space-2) var(--space-5);
+    font-size: var(--text-xs);
+  }
+
+  .lg {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-xs);
+  }
+
+  .spinner {
+    width: 15px;
+    height: 15px;
+  }
+
+  .icon svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* 640px+ - Standard sizes */
+@media (min-width: 640px) {
+  .sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  .md {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-sm);
+  }
+
+  .lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-sm);
+  }
+
+  .spinner {
+    width: 16px;
+    height: 16px;
+  }
+
+  .icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}

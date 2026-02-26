@@ -1,0 +1,363 @@
+/* ==========================================================================
+   NotFoundPage - Mobile-First Responsive
+   HairByTimaBlaq - Readable fonts (13px+ minimum)
+   ========================================================================== */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-6) var(--space-4);
+}
+
+/* Background Orbs */
+.bgOrb1,
+.bgOrb2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.bgOrb1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(236, 72, 153, 0.15);
+  top: -100px;
+  right: -50px;
+}
+
+.bgOrb2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(212, 175, 55, 0.1);
+  bottom: -100px;
+  left: -50px;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Error Code */
+.errorCode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.four {
+  font-family: var(--font-heading);
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zero {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zero svg {
+  width: 100%;
+  height: 100%;
+  color: var(--accent-gold);
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+}
+
+/* Message */
+.message {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Actions - Mobile First (Stacked) */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  width: 100%;
+  max-width: 280px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  min-height: 48px;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
+  color: white;
+  border: none;
+}
+
+.primaryBtn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+  color: white;
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+}
+
+.secondaryBtn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.secondaryBtn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* Quick Links */
+.quickLinks {
+  padding: var(--space-5);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-default);
+  width: 100%;
+  margin-bottom: var(--space-5);
+}
+
+.quickLinksTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-4);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.links a {
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-card);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.links a:hover {
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--accent-primary);
+}
+
+/* Back Button */
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  cursor: pointer;
+  min-height: 44px;
+  transition: color 0.2s ease;
+}
+
+.backBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.backBtn:hover {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Responsive - Progressive Enhancement (Mobile First)
+   ========================================================================== */
+
+/* 400px+ */
+@media (min-width: 400px) {
+  .page {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .bgOrb1 {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    right: -80px;
+  }
+
+  .bgOrb2 {
+    width: 350px;
+    height: 350px;
+    bottom: -120px;
+    left: -80px;
+  }
+
+  .errorCode {
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .four {
+    font-size: 100px;
+  }
+
+  .zero {
+    width: 85px;
+    height: 85px;
+  }
+
+  .title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .subtitle {
+    font-size: var(--text-base);
+    max-width: 400px;
+  }
+
+  .message {
+    margin-bottom: var(--space-8);
+  }
+
+  .quickLinks {
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+
+  .quickLinksTitle {
+    font-size: 12px;
+  }
+
+  .links a {
+    font-size: 14px;
+    padding: var(--space-2) var(--space-4);
+  }
+}
+
+/* 640px+ - Row layout for actions */
+@media (min-width: 640px) {
+  .container {
+    max-width: 600px;
+  }
+
+  .bgOrb1 {
+    width: 500px;
+    height: 500px;
+    top: -200px;
+    right: -100px;
+  }
+
+  .bgOrb2 {
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    left: -100px;
+  }
+
+  .four {
+    font-size: 120px;
+  }
+
+  .zero {
+    width: 100px;
+    height: 100px;
+  }
+
+  .zero svg {
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: auto;
+  }
+
+  .quickLinks {
+    max-width: 500px;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryBtn,
+  .secondaryBtn,
+  .links a,
+  .backBtn {
+    transition: none;
+  }
+}
