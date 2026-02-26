@@ -16,7 +16,8 @@ dist-ssr
 .env.*.local
 .env.example
 README.md
-structure_brick_dev.txt
+structure_hairbytimablaw.txt
+api.zip
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

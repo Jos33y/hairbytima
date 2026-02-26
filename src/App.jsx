@@ -7,7 +7,6 @@ import { useCurrencyStore } from '@store/currencyStore';
 
 // Analytics
 import { trackPageView } from '@utils/analytics';
-import { Analytics } from '@vercel/analytics/react';
 
 // Shop Pages
 import HomePage from '@pages/shop/HomePage';
@@ -496,7 +495,6 @@ function App() {
           }
         />
       </Routes>
-     {import.meta.env.PROD && <Analytics />}
     </>
   );
 }
