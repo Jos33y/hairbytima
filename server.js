@@ -49,10 +49,9 @@ app.use('/api', (req, res, next) => {
 // =============================================================================
 
 // --- Auth ---
-import authSendCode from './api/auth/send-code.js';
-import authVerifyCode from './api/auth/verify-code.js';
-app.all('/api/auth/send-code', authSendCode);
-app.all('/api/auth/verify-code', authVerifyCode);
+// send-code.js and verify-code.js are empty placeholders — skipped
+// app.all('/api/auth/send-code', authSendCode);
+// app.all('/api/auth/verify-code', authVerifyCode);
 
 // --- Admin Core ---
 import adminLogin from './api/admin/login.js';
@@ -131,22 +130,21 @@ app.all('/api/coupons/validate', couponsValidate);
 app.all('/api/coupons', coupons);
 
 // --- Currency ---
-import currencyRates from './api/currency/rates.js';
-app.all('/api/currency/rates', currencyRates);
+// rates.js is empty placeholder — skipped
+// app.all('/api/currency/rates', currencyRates);
 
 // --- Customers ---
 import customersLookup from './api/customers/lookup.js';
 app.all('/api/customers/lookup', customersLookup);
 
 // --- Emails ---
-import emailsSend from './api/emails/send.js';
+// send.js is empty placeholder — skipped
 import emailsSendOrderConfirmation from './api/emails/send-order-confirmation.js';
 import emailsSendOrderShipped from './api/emails/send-order-shipped.js';
 import emailsSendVerificationCode from './api/emails/send-verification-code.js';
 app.all('/api/emails/send-order-confirmation', emailsSendOrderConfirmation);
 app.all('/api/emails/send-order-shipped', emailsSendOrderShipped);
 app.all('/api/emails/send-verification-code', emailsSendVerificationCode);
-app.all('/api/emails/send', emailsSend);
 
 // --- Newsletter ---
 import newsletter from './api/newsletter/index.js';
@@ -167,16 +165,14 @@ app.all('/api/orders/verify-code', ordersVerifyCode);
 app.all('/api/orders', orders);
 
 // --- Payments ---
-import paymentsBank from './api/payments/bank.js';
-import klarnaCallback from './api/payments/klarna/callback.js';
-import klarnaCreateSession from './api/payments/klarna/create-session.js';
-app.all('/api/payments/bank', paymentsBank);
-app.all('/api/payments/klarna/callback', klarnaCallback);
-app.all('/api/payments/klarna/create-session', klarnaCreateSession);
+// bank.js, klarna/callback.js, klarna/create-session.js are empty placeholders — skipped
+// app.all('/api/payments/bank', paymentsBank);
+// app.all('/api/payments/klarna/callback', klarnaCallback);
+// app.all('/api/payments/klarna/create-session', klarnaCreateSession);
 
 // --- Products ---
-import products from './api/products/index.js';
-app.all('/api/products', products);
+// index.js is empty placeholder — skipped
+// app.all('/api/products', products);
 
 // --- Sitemap ---
 import sitemapProducts from './api/sitemap/products.js';
